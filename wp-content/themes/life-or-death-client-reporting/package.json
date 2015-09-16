@@ -1,0 +1,24 @@
+{
+  "name": "life-or-death-client-reporting",
+  "version": "0.0.0",
+  "description": "Made by ETR",
+  "main": "Gruntfile.js",
+  "scripts": {
+    
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "browser-sync": "~2.6.9",
+    "grunt-sass": "latest",
+    "grunt-browser-sync": "~2.1.3",
+    "webpack-dev-server": "~1.9.0",
+    "node-libs-browser": "~0.5.2",
+    "webpack": "~1.9.10",
+    "grunt-webpack": "~1.0.8",
+    "inquirer": "~0.8.5"
+  },
+  "dependencies": {
+    "jquery": "latest"
+  }
+}

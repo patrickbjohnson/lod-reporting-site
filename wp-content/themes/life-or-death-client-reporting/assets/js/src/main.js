@@ -1,0 +1,1 @@
+console.log('Hello from life-or-death-client-reporting');
