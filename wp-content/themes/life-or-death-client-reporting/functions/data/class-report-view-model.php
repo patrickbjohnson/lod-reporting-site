@@ -43,5 +43,4 @@ class Report_View_Model extends Post_View_Model {
     public function get_awards() {
         return explode( "\n", $this->awards );
     }
-    
 }

@@ -24,6 +24,7 @@ add_action('wp_enqueue_scripts', function() {
     /*-------------------------------------------- */
     /** Footer Scripts */
     /*-------------------------------------------- */
-
+    //
+    wp_enqueue_script( 'twitter', '//platform.twitter.com/widgets.js', false, false, true );
 
 });

@@ -1,4 +1,5 @@
 <?php 
+	is_logged_in();
 	get_header();
  ?>
 

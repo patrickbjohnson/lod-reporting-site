@@ -35,3 +35,4 @@ require_once(__DIR__ . '/scripts.php');
 require_once(__DIR__ . '/styles.php');
 require_once(__DIR__ . '/post-types.php');
 require_once(__DIR__ . '/taxonomies.php');
+require_once(__DIR__ . '/roles.php');
