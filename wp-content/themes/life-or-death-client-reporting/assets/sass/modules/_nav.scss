@@ -11,4 +11,12 @@ $block: nav;
 	background: rgba(0,0,0,0.5);
 	padding-top: 25px;
 	padding-bottom: 25px;
+	text-align: center;
+
+	&__item {
+		padding-left: 10px;
+		padding-right: 10px;
+		color: $color-white;
+		text-decoration: none;
+	}
 }

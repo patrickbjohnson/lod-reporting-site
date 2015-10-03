@@ -628,7 +628,13 @@ strong {
   float: left;
   background: rgba(0, 0, 0, 0.5);
   padding-top: 25px;
-  padding-bottom: 25px; }
+  padding-bottom: 25px;
+  text-align: center; }
+  .nav__item {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    text-decoration: none; }
 
 /*-------------------------------------------- */
 /** Pages */
