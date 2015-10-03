@@ -1,22 +1,32 @@
 <?php
-// auth_redirect();
 /* Template Name: Reports */
 
-// is_logged_in();
+
+is_logged_in();
 
 get_header();
 
+// var_dump(wp_get_current_user());
 
-global $current_user;
-get_currentuserinfo();
-
-// The Query
 $args = array(
 	'post_type' => 'report',
-	// 'meta_key' => 'report_client',
-	// 'meta_value' => $current_user->ID
+	'posts_per_page' => -1
+
 );
-$the_query = new WP_Query( $args ); ?>
+
+if ( !current_user_can( 'manage_options' ) ) {
+	$args = array(
+		'post_type' => 'report',
+		'meta_key' => 'report_client',
+		'meta_value' => $current_user->ID
+	);
+}
+
+
+$the_query = new WP_Query( $args ); 
+
+?>
+
 
 <?php if ( $the_query->have_posts() ) : ?>
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

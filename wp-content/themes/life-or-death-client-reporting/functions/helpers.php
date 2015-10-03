@@ -7,9 +7,13 @@
  * 
  * ------------------------------------------------------------ */
 
+
+// Alphabetically sorts content from ACF Field
 function sort_repeater($repeater_field) {
 	$repeater_field = get_field($repeater_field);
-	$order = array();
+	
+	if ( empty($repeater_field) ) { return; }
+	
 	foreach ($repeater_field as $key => $row) {
 		$order[$key] = array(
 			'post' 		=> $row['media_outlet'],
