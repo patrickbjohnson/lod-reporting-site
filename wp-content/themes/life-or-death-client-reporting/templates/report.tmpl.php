@@ -37,12 +37,6 @@ $the_query = new WP_Query( $args );
 			<p>Report Date:<?php echo $report->report_date; ?></p>
 			<p>Report Overview:</p>
 
-			<?php 
-				
-			?>
-			
-
-
 			<ul>
 				<li>Features: <?php $report->count_updates($report->features_recap); ?> / <span>New: <?php echo $report->get_new_report_count('features_recap'); ?></span></li>
 				<li>Tour: <?php $report->count_updates($report->tour_recap); ?> / <span>New: <?php echo $report->get_new_report_count('tour_recap'); ?></span></li>

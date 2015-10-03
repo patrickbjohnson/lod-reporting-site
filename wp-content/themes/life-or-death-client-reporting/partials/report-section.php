@@ -19,7 +19,9 @@
 	<p>Circulation: <?php echo $outlet_circulation; ?></p>
 	<p>Site Stats: <?php echo $outlet_site_visits; ?></p>
 	<p>Feature Notes: <?php echo $notes; ?></p>
-	<p>Feature Links: <?php echo $links; ?></p>
+	<p>Feature Links: <a href="<?php echo $links; ?>"><?php echo $links; ?></a>
+
+	</p>
 	<div class="report__social">
 		<p>Facebook: <?php echo $facebook; ?></p>
 		<p>Twitter: <a href="https://twitter.com/<?php echo $twitter; ?>" class="twitter-follow-button"
