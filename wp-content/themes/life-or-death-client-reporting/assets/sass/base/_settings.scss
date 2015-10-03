@@ -24,7 +24,7 @@ $font-base-path: '../font';
 /*-------------------------------------------- */
 
 $is-responsive: true;
-$page-container-width: 1140px;
+$page-container-width: 1200px;
 $page-container-padding: 20px;
 
 
@@ -56,11 +56,11 @@ $h6-font-size: 16;
 
 $body-bg-color: #cccccc;
 $body-font-color: light-grey;
-$page-container-bg-color: ghostwhite;
+$page-container-bg-color: $body-bg-color;
 
-$link-color: limegreen;
-$link-color-hover: limegreen;
-$link-color-active: limegreen;
+$link-color: $color-black;
+$link-color-hover: $color-black;
+$link-color-active: $color-black;
 
 $h1-font-color: $body-font-color;
 $h2-font-color: $body-font-color;

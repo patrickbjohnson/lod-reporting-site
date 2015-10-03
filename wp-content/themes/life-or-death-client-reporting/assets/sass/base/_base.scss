@@ -15,9 +15,10 @@ body {
 
 body {
     background: $body-bg-color;
-    color: $body-font-color;
+    font-family: $primary-font;
     font-weight: $base-font-weight;
     line-height: $base-line-height;
+    color: $body-font-color;
 }
 
 h1,

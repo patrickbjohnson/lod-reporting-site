@@ -11,7 +11,7 @@
  	if ( !isset( $report_status ) )  $report_status = '';
 ?>
 
-<div class="report" data-facebook="<?php echo $facebook; ?>" data-twitter="<?php echo $twitter; ?>">
+<div class="report__item" data-facebook="<?php echo $facebook; ?>" data-twitter="<?php echo $twitter; ?>">
 	<h1><?php echo $name; ?></h1>
 	<p>Status:  <?php echo $report_status; ?></p>
 	<p>Type: <?php echo $outlet_type; ?></p>

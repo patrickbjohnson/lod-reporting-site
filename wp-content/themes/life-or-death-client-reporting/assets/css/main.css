@@ -507,9 +507,10 @@ body {
 
 body {
   background: #cccccc;
-  color: light-grey;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
-  line-height: 1.4; }
+  line-height: 1.4;
+  color: light-grey; }
 
 h1,
 .h1 {
@@ -551,11 +552,11 @@ p {
   margin-bottom: 20px; }
 
 a {
-  color: limegreen; }
+  color: #222; }
   a:hover {
-    color: limegreen; }
+    color: #222; }
   a.active {
-    color: limegreen; }
+    color: #222; }
 
 strong {
   font-weight: 700; }
@@ -589,11 +590,11 @@ strong {
  * contain the width to $page-container-width
  */
 .page-container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
-  background: ghostwhite; }
+  background: #cccccc; }
 
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
@@ -617,6 +618,18 @@ strong {
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+/**
+ * Block: nav
+ * Element: nav__element
+ * Modifier: nav--modifier
+ */
+.nav {
+  width: 100%;
+  float: left;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 25px;
+  padding-bottom: 25px; }
+
 /*-------------------------------------------- */
 /** Pages */
 /*-------------------------------------------- */

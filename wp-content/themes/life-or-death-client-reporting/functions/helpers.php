@@ -31,3 +31,19 @@ function is_logged_in() {
 	 wp_redirect( site_url() . '/wp-admin' );
 	};
 }
+
+function disable_wp_admin_bar() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+	    show_admin_bar( false );
+	}
+	?>
+	<style>
+		html { margin-top: 0 !important; }
+		* html body { margin-top: 0 !important; }
+		@media screen and ( max-width: 782px ) {
+			html { margin-top: 0 !important; }
+			* html body { margin-top: 0 !important; }
+		}
+	</style>
+	<?php
+}

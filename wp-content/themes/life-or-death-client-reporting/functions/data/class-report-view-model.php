@@ -4,25 +4,6 @@ require_once( dirname( __FILE__ ) . '/../lib/data/class-post-view-model.php' );
 
 class Report_View_Model extends Post_View_Model {
 
-    public function is_on_tap() {
-        return $this->on_tap > 0;
-    }
-
-    public function get_ingredients() {
-        $ingredients = array();
-
-        while ( have_rows('ingredients') ) {
-            the_row();
-
-            $ingredients[] = array(
-                'type' => get_sub_field( 'type' ),
-                'items' => explode( "\n", get_sub_field( 'list' ) )
-            );
-        }
-
-        return $ingredients;
-    }
-
     public function get_availability() {
         $availability = get_field( 'beer_availability', $this->post );
 
@@ -42,5 +23,28 @@ class Report_View_Model extends Post_View_Model {
 
     public function get_awards() {
         return explode( "\n", $this->awards );
+    }
+
+    public function count_updates( $report ) {
+        if ( empty($report) ) {
+            echo 0;
+        } else {
+            echo count( $report );
+        }
+    }
+
+    public function get_new_report_count($repeater_field) {
+        $report_with_new_status = array();
+
+        while ( have_rows($repeater_field) ) {
+            the_row();
+            if ( get_sub_field('report_status') == 'New') {
+                array_push($report_with_new_status, get_sub_field('report_status'));
+            }
+        }
+
+
+
+        return count($report_with_new_status);
     }
 }
