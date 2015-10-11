@@ -13,5 +13,6 @@
 </head>
 <?php 
 disable_wp_admin_bar();
+ show_admin_bar( false );
 ?>
 <body <?php body_class(); ?>>

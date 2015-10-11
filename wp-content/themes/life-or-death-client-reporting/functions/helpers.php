@@ -47,3 +47,8 @@ function disable_wp_admin_bar() {
 	</style>
 	<?php
 }
+
+
+if(function_exists('set_pdf_print_support')) {
+  set_pdf_print_support(array('post', 'page', 'report'));
+}

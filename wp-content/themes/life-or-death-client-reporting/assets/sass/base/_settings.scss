@@ -54,8 +54,8 @@ $h6-font-size: 16;
 /** Color Settings */
 /*-------------------------------------------- */
 
-$body-bg-color: #cccccc;
-$body-font-color: light-grey;
+$body-bg-color: $color-white;
+$body-font-color: $color-black;
 $page-container-bg-color: $body-bg-color;
 
 $link-color: $color-black;

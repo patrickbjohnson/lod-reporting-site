@@ -11,21 +11,34 @@
  	if ( !isset( $report_status ) )  $report_status = '';
 ?>
 
-<div class="report__item" data-facebook="<?php echo $facebook; ?>" data-twitter="<?php echo $twitter; ?>">
-	<h1><?php echo $name; ?></h1>
-	<p>Status:  <?php echo $report_status; ?></p>
-	<p>Type: <?php echo $outlet_type; ?></p>
-	<p>Descrption: <?php echo $outlet_description; ?></p>
-	<p>Circulation: <?php echo $outlet_circulation; ?></p>
-	<p>Site Stats: <?php echo $outlet_site_visits; ?></p>
-	<p>Feature Notes: <?php echo $notes; ?></p>
-	<p>Feature Links: <a href="<?php echo $links; ?>"><?php echo $links; ?></a>
-
-	</p>
+<div class="report__item" <?php echo $facebook ? 'data-facebook="' . $facebook . '"' : '' ; ?> <?php echo $twitter ? 'data-twitter="' . $twitter . '"' : '' ; ?>">
+	<div class="report__header">
+		<h1 class="report__item-title">
+			<?php echo $name; ?> 
+			<?php if ( $report_status ) : ?>
+				<span class="report__status <?php echo $report_status === 'New' ? 'report__status--new' : '' ;?>" ><?php echo $report_status; ?></span>
+			<?php endif; ?>
+		</h1>
+		<?php echo $outlet_description; ?>
+		<ul>
+			<li>Circulation: <?php echo $outlet_circulation; ?></li>
+			<li>Unique Visitors: <?php echo $outlet_site_visits; ?></li>
+		</ul>
+	</div>
+	<div class="notes">
+		<h2 class="report__notes">Notes</h2>
+		<?php echo $notes; ?>
+		<p><a href="<?php echo $links; ?>"><?php echo $links; ?></a>
+	</div>
 	<div class="report__social">
-		<p>Facebook: <?php echo $facebook; ?></p>
-		<p>Twitter: <a href="https://twitter.com/<?php echo $twitter; ?>" class="twitter-follow-button"
-  ><?php echo $twitter; ?></a></p>
+		<?php if ($facebook) : ?>
+			<p>Facebook: <?php echo $facebook; ?></p>
+		<?php endif; ?>
+		<?php if ( $twitter ) : ?>
+			<p>Twitter: <a href="https://twitter.com/<?php echo $twitter; ?>" class="twitter-follow-button"
+			  ><?php echo $twitter; ?></a></p>
+		<?php endif; ?>
+
 	</div>
 </div>
 

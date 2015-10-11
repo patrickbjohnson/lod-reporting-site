@@ -42,9 +42,6 @@ class Report_View_Model extends Post_View_Model {
                 array_push($report_with_new_status, get_sub_field('report_status'));
             }
         }
-
-
-
         return count($report_with_new_status);
     }
 }

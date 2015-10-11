@@ -20,8 +20,11 @@
         width: $page-container-width;
     }
 
+	@include clearfix();
     margin: 0 auto;
     padding-right: $page-container-padding;
     padding-left: $page-container-padding;
     background: $page-container-bg-color;
+
+    overflow: hidden;
 }

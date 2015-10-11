@@ -7,8 +7,6 @@ $post = new Post_View_Model($post);
 
 get_header();
 
-// var_dump(wp_get_current_user());
-
 $args = array(
 	'post_type' => 'report',
 	'posts_per_page' => -1
@@ -28,24 +26,28 @@ $the_query = new WP_Query( $args );
 
 ?>
 <div class="page-container">
+	<div class="hero">
+		<h1>Artist Name</h1>
+		<h2>Project Name / Album Name</h2>
+		
+	</div>
 	<h1><?php echo $post->get_title(); ?></h1>
 	<?php if ( $the_query->have_posts() ) : ?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-			$report = new Report_View_Model( $post );
-		?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $report = new Report_View_Model( $post );?>
 			<a href="<?php the_permalink(); ?>"><?php echo $report->get_title(); ?></a>
-			<p>Report Date:<?php echo $report->report_date; ?></p>
-			<p>Report Overview:</p>
+			<p>Date: <?php echo $report->report_date; ?></p>
+			<p>Overview: </p>
+			<?php if( have_rows('pull_quotes') ): ?>
+			    <?php while ( have_rows('pull_quotes') ) : the_row(); ?>
+					<blockquote>
+						<?php  
+							the_sub_field('quote_text');
+							the_sub_field('quote_attribution');	
+						?>
+					</blockquote>
+			    <?php endwhile; ?>
+			<?php endif; ?>
 
-			<ul>
-				<li>Features: <?php $report->count_updates($report->features_recap); ?> / <span>New: <?php echo $report->get_new_report_count('features_recap'); ?></span></li>
-				<li>Tour: <?php $report->count_updates($report->tour_recap); ?> / <span>New: <?php echo $report->get_new_report_count('tour_recap'); ?></span></li>
-				<li>Pending: <?php $report->count_updates($report->pending_recap); ?> / <span>New: <?php echo $report->get_new_report_count('pending_recap'); ?></span></li>
-				<li>Passed: <?php $report->count_updates($report->passed_recap); ?> / <span>New: <?php echo $report->get_new_report_count('passed_recap'); ?></span></li>
-				<li>News: <?php $report->count_updates($report->news_recap); ?> / <span>New: <?php echo $report->get_new_report_count('news_recap'); ?></span></li>
-			</ul>
-
-			
 		<?php endwhile; wp_reset_postdata(); ?>
 
 	<?php else : ?>

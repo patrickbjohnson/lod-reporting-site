@@ -22,14 +22,23 @@
 
 <?php the_partial('nav'); ?>
 
-<div class="page-container">
-	<?php if ( have_post ) : while ( have_posts() ) : the_post(); ?>
-		<h1><?php echo $report->get_title(); ?></h1>
-		<h2><?php echo $report->report_date; ?></h2> 
 
+	
+	<?php if ( have_post ) : while ( have_posts() ) : the_post(); ?>
+		<div class="hero">
+			<div class="page-container">
+				<h2 class="hero__client"><?php echo $current_user->display_name; ?></h2>
+				<h1 class="hero__title"><?php echo $report->get_title(); ?></h1>
+				<?php if ($report->label) : ?>
+					<h3 class="hero__label"><?php echo $report->label; ?></h3>
+				<?php endif; ?>
+				<h4 class="hero__date"><?php echo $report->report_date; ?></h4>
+			</div>
+		</div>
+		<div class="page-container">
 		<?php if( $features_recap ): ?>
 			<div class="report" id="features">
-			<h1>Features</h1>
+			<h1 class="report__title">Features</h1>
 			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -45,12 +54,13 @@
 				));
 				endforeach; 
 			?>
+			
 			</div>
 		<?php endif; ?>
 
 		<?php if( $tours_recap ): ?>
 			<div class="report" id="tours">
-			<h1>Tours</h1>
+			<h1 class="report__title">Tours</h1>
 			<?php foreach( $tours_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -71,7 +81,7 @@
 
 		<?php if( $pending_recap ): ?>
 			<div class="report" id="pending">
-			<h1>Pending</h1>
+			<h1 class="report__title">Pending</h1>
 			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -92,7 +102,7 @@
 
 		<?php if( $passed_recap ): ?>
 			<div class="report" id="passed">
-			<h1>Passed</h1>
+			<h1 class="report__title">Passed</h1>
 			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -113,7 +123,7 @@
 
 		<?php if( $news_recap ): ?>
 			<div class="report" id="news">
-			<h1>News</h1>
+			<h1 class="report__title">News</h1>
 			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -131,6 +141,7 @@
 			?>
 			</div>
 		<?php endif; ?>
+		</div>
 	<?php endwhile; endif; wp_reset_postdata(); ?>
 </div>
 

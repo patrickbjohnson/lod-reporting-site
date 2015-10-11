@@ -1,0 +1,62 @@
+/**
+ * Block: report
+ * Element: report__element
+ * Modifier: report--modifier
+ */
+
+$block: report;
+.report {
+	margin-top: 35px;
+	margin-bottom: 35px;
+
+	@include respond-to('small and up') {
+		margin-top: 75px;
+		margin-bottom: 75px;
+	}
+
+	&__title {
+		font-size: rem(20);
+		text-align: center;
+
+		@include respond-to('small and up') {
+			font-size: rem(28);
+		}
+	}
+
+	&__item {
+		max-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px;
+	}
+
+	&__item-title {
+		font-size: rem(22);
+		font-weight: 500;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&__status {
+		display: inline-block;
+		font-size: rem(10);
+		text-transform: uppercase;
+		font-weight: 300;
+		padding: 3px 5px;
+		border-radius: 5px;
+		color: white;
+		vertical-align: text-bottom;
+
+		&--new {
+			background: $color-light-green;
+		}
+	}
+
+	&__notes {
+		font-size: rem(18);
+		font-weight: 500;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+}
