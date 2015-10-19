@@ -97,6 +97,6 @@ blockquote {
  * Set text selection color
  */
 @include selection {
-    background-color: $text-selection-bg-color;
-    color: $text-selection-foreground-color;
+    background-color: $color-black;
+    color: $color-white;
 }

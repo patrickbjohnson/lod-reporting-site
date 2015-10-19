@@ -574,12 +574,12 @@ blockquote {
  * Set text selection color
  */
 ::-moz-selection {
-  background-color: blue;
-  color: pink; }
+  background-color: #222;
+  color: #fff; }
 
 ::selection {
-  background-color: blue;
-  color: pink; }
+  background-color: #222;
+  color: #fff; }
 
 /*-------------------------------------------- */
 /** Layout */
