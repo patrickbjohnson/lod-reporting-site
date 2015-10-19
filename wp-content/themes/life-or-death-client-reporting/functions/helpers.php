@@ -48,7 +48,47 @@ function disable_wp_admin_bar() {
 	<?php
 }
 
-
 if(function_exists('set_pdf_print_support')) {
   set_pdf_print_support(array('post', 'page', 'report'));
+}
+
+
+//Get Facebook Likes Count of a page
+function fbLikeCount($fb_id){
+	$app_id = '1659676727645012';
+	$app_secret = '8fbeb085f9e5b281a1633ebdbe4522c9';
+
+	//Construct a Facebook URL
+	$json_url ='https://graph.facebook.com/' . $fb_id . '?access_token=' . $app_id . '|' . $app_secret . '&fields=likes';
+	$json = file_get_contents( $json_url );
+	$json_output = json_decode( $json );
+ 
+	//Extract the likes count from the JSON object
+	if( $json_output ){
+		return number_format( $json_output->likes );
+	} else {
+		return 0;
+	}
+}
+
+
+function twitter_follower_count($user) {
+	$settings = array(
+	    'oauth_access_token' => "3990303016-sYVmj2iuoEsKJ1wsQfIY2X7hP5DejxhU0DppZS7",
+	    'oauth_access_token_secret' => "oc0BD1qqndSKGjYTpMUOvVrhhgPYVoqSQEufJIjjWusZt",
+	    'consumer_key' => "i5YkgcbJ6uWtnK64SkquhiwLn",
+	    'consumer_secret' => "g5UQqBVMyfPFy4A2GsorusjiWhqUCNzhUcd47gZHxNDnEtd0B9"
+	);
+
+	$url = "https://api.twitter.com/1.1/users/show.json";
+	$getfield = '?screen_name=' . $user;
+	$requestMethod = 'GET';
+	$twitter = new TwitterAPIExchange( $settings );
+
+	$twitter_data = $twitter->setGetfield( $getfield )
+	             			->buildOauth( $url, $requestMethod )
+	             			->performRequest();
+
+	$get_count = json_decode( $twitter_data, true );
+	return number_format( $get_count['followers_count'] );  
 }

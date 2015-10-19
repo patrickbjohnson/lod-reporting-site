@@ -374,7 +374,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -696,6 +697,14 @@ blockquote {
     display: block;
     background: #fff; }
 
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.list-inline li {
+  display: inline-block; }
+
 /**
  * Block: hero
  * Element: hero__element
@@ -708,13 +717,9 @@ blockquote {
   padding-bottom: 20px;
   border-bottom: 1px solid #222;
   text-align: center; }
-  .hero__title,
-  .hero__client,
-  .hero__label,
-  .hero__date {
+  .hero__title, .hero__client, .hero__label, .hero__date {
     margin: 0; }
-  .hero__client,
-  .hero__date {
+  .hero__client, .hero__date {
     font-size: 1rem;
     text-transform: uppercase; }
   .hero__title {
@@ -745,11 +750,17 @@ blockquote {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px; }
+  .report__header {
+    margin-bottom: 25px; }
   .report__item-title {
     font-size: 1.375rem;
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 5px; }
+  .report__outlet-description p {
+    margin-bottom: 10px; }
+    .report__outlet-description p:last-child {
+      margin-bottom: 0; }
   .report__status {
     display: inline-block;
     font-size: 0.625rem;
@@ -761,11 +772,29 @@ blockquote {
     vertical-align: text-bottom; }
     .report__status--new {
       background: #2ecc71; }
-  .report__notes {
+  .report__notes-title {
     font-size: 1.125rem;
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 5px; }
+  .report__stats, .report__social {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .report__stats li, .report__social li {
+      margin-right: 10px;
+      font-size: 0.875rem; }
+  .report__stats li {
+    display: block;
+    text-transform: uppercase; }
+    @media (min-width: 700px) {
+      .report__stats li {
+        display: inline-block; } }
+  .report__stats img {
+    position: relative;
+    display: inline-block;
+    top: 7px;
+    max-width: 25px;
+    margin-right: 3px; }
 
 /*-------------------------------------------- */
 /** Pages */

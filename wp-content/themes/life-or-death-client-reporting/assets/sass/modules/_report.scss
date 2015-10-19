@@ -29,12 +29,26 @@ $block: report;
 		margin-right: auto;
 		margin-bottom: 50px;
 	}
+	
+	&__header {
+		margin-bottom: 25px;
+	}
 
 	&__item-title {
 		font-size: rem(22);
 		font-weight: 500;
 		margin-top: 5px;
 		margin-bottom: 5px;
+	}
+
+	&__outlet-description {
+		p {
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&__status {
@@ -52,11 +66,45 @@ $block: report;
 		}
 	}
 
-	&__notes {
+	&__notes-title {
 		font-size: rem(18);
 		font-weight: 500;
 		margin-top: 5px;
 		margin-bottom: 5px;
+	}
+
+	&__stats,
+	&__social {
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		li {
+			margin-right: 10px;
+			font-size: rem(14);
+		}
+	}
+
+	&__stats {
+		li {
+			display: block;
+			text-transform: uppercase;
+
+			@include respond-to('small and up') {
+				display: inline-block;
+			}
+		}
+
+		img {
+			position: relative;
+			display: inline-block;
+			top: 7px;
+			max-width: 25px;
+			margin-right: 3px;
+		}
+	}
+
+	&__social {
+		
 	}
 
 }

@@ -19,26 +19,30 @@
 				<span class="report__status <?php echo $report_status === 'New' ? 'report__status--new' : '' ;?>" ><?php echo $report_status; ?></span>
 			<?php endif; ?>
 		</h1>
+		<div class="report__outlet-description">
 		<?php echo $outlet_description; ?>
-		<ul>
-			<li>Circulation: <?php echo $outlet_circulation; ?></li>
-			<li>Unique Visitors: <?php echo $outlet_site_visits; ?></li>
+		</div>
+		<ul class="list-unstyled report__stats">
+			<li class="report__stats-item">Circulation: <?php echo $outlet_circulation; ?></li>
+			<li class="report__stats-item">Unique Visitors: <?php echo $outlet_site_visits; ?></li>
+			<?php if ($facebook) : ?>
+				<li class="report__stats-item">
+					<img src="<?php BPAssetHelper::the_image('icon-facebook.svg');?>" alt="">	
+					<?php echo fbLikeCount($facebook) ?>
+				</li>
+			<?php endif; ?>
+			<?php if ( $twitter ) : ?>
+				<li class="report__stats-item">
+					<img src="<?php BPAssetHelper::the_image('icon-twitter.svg');?>" alt="">
+					<?php echo twitter_follower_count($twitter); ?>
+				</li>
+			<?php endif; ?>
 		</ul>
 	</div>
 	<div class="notes">
-		<h2 class="report__notes">Notes</h2>
+		<h2 class="report__notes-title">Notes</h2>
 		<?php echo $notes; ?>
 		<p><a href="<?php echo $links; ?>"><?php echo $links; ?></a>
-	</div>
-	<div class="report__social">
-		<?php if ($facebook) : ?>
-			<p>Facebook: <?php echo $facebook; ?></p>
-		<?php endif; ?>
-		<?php if ( $twitter ) : ?>
-			<p>Twitter: <a href="https://twitter.com/<?php echo $twitter; ?>" class="twitter-follow-button"
-			  ><?php echo $twitter; ?></a></p>
-		<?php endif; ?>
-
 	</div>
 </div>
 
