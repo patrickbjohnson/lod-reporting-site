@@ -4,6 +4,7 @@
 	$pending_recap = sort_repeater('pending_recap');
 	$passed_recap = sort_repeater('passed_recap');
 	$news_recap = sort_repeater('news_recap');
+	$tv_radio_recap = sort_repeater('tv_radio_recap');
 ?>
 
 <nav class="nav">
@@ -33,8 +34,9 @@
 		<a class="nav__item" href="#news">News</a>
 		<?php endif; ?>
 
-		
-		
-		
+		<?php if ( $tv_radio_recap ) : ?>
+		<a class="nav__item" href="#radio">TV / Radio</a>
+		<?php endif; ?>
+
 	</div>
 </nav>

@@ -796,6 +796,29 @@ blockquote {
     max-width: 25px;
     margin-right: 3px; }
 
+/**
+ * Block: footer
+ * Element: footer__element
+ * Modifier: footer--modifier
+ */
+.footer {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0.67em 0;
+  border-top: 1px solid #222; }
+  .footer .site-credit {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    margin: auto;
+    font-size: 0.625rem;
+    color: #626262;
+    text-transform: lowercase;
+    text-align: center; }
+
 /*-------------------------------------------- */
 /** Pages */
 /*-------------------------------------------- */

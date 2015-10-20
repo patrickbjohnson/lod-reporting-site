@@ -10,7 +10,6 @@ get_header();
 $args = array(
 	'post_type' => 'report',
 	'posts_per_page' => -1
-
 );
 
 if ( !current_user_can( 'manage_options' ) ) {
@@ -21,16 +20,13 @@ if ( !current_user_can( 'manage_options' ) ) {
 	);
 }
 
-
 $the_query = new WP_Query( $args ); 
 
 ?>
+<div class="hero">
+	<h1><?php echo $current_user->display_name; ?> Dashboard</h1>
+</div>
 <div class="page-container">
-	<div class="hero">
-		<h1>Artist Name</h1>
-		<h2>Project Name / Album Name</h2>
-		
-	</div>
 	<h1><?php echo $post->get_title(); ?></h1>
 	<?php if ( $the_query->have_posts() ) : ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $report = new Report_View_Model( $post );?>
@@ -54,9 +50,9 @@ $the_query = new WP_Query( $args );
 		<p><?php _e( 'Sorry, no reports just yet.' ); ?></p>
 	<?php endif; ?>
 
-	<?php get_footer(); ?>
 </div>
 
+<?php get_footer(); ?>
 
 
 

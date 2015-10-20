@@ -34,7 +34,8 @@
             "choices": {
                 "Print": "Print",
                 "Digital": "Digital",
-                "Print & Digital": "Print & Digital"
+                "Print & Digital": "Print & Digital",
+                "TV \/ Radio": "TV \/ Radio"
             },
             "default_value": [],
             "allow_null": 0,
@@ -204,5 +205,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1442707579
+    "modified": 1445305335
 }

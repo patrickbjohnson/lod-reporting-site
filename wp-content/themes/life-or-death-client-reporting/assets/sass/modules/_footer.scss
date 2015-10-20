@@ -1,0 +1,27 @@
+/**
+ * Block: footer
+ * Element: footer__element
+ * Modifier: footer--modifier
+ */
+
+$block: footer;
+.footer {
+	position: relative;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    margin: 0.67em 0;
+	border-top: 1px solid $color-black;
+
+	.site-credit {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 200px;
+		margin: auto;
+		font-size: rem(10);
+		color: lighten($color-black, 25%);
+		text-transform: lowercase;
+		text-align: center;
+	}
+}

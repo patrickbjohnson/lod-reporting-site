@@ -4,25 +4,10 @@ require_once( dirname( __FILE__ ) . '/../lib/data/class-post-view-model.php' );
 
 class Report_View_Model extends Post_View_Model {
 
-    public function get_availability() {
-        $availability = get_field( 'beer_availability', $this->post );
-
-        if ( ! $availability ) {
-            // if no availability was set, default to the beer type
-            $availability = $this->get_beer_type();
-        }
+    public function set_number_format( $num_value ) {
+        if ( !isset( $num_value )) return;
         
-        return $availability;
-    }
-
-    public function get_beer_type() {
-        $beer_type = get_the_terms( $this->post->ID, 'beer_type' );
-
-        return empty( $beer_type ) ? '' : $beer_type[0]->name;
-    }
-
-    public function get_awards() {
-        return explode( "\n", $this->awards );
+        return number_format(intval($num_value));
     }
 
     public function count_updates( $report ) {

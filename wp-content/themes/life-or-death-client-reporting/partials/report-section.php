@@ -23,8 +23,13 @@
 		<?php echo $outlet_description; ?>
 		</div>
 		<ul class="list-unstyled report__stats">
+			<?php if ( $outlet_circulation ) : ?>
 			<li class="report__stats-item">Circulation: <?php echo $outlet_circulation; ?></li>
+			<?php endif; ?>
+
+			<?php if ( $outlet_site_visits ) : ?>
 			<li class="report__stats-item">Unique Visitors: <?php echo $outlet_site_visits; ?></li>
+			<?php endif; ?>
 			<?php if ($facebook) : ?>
 				<li class="report__stats-item">
 					<img src="<?php BPAssetHelper::the_image('icon-facebook.svg');?>" alt="">	
