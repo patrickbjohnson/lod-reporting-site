@@ -256,6 +256,124 @@
             ]
         },
         {
+            "key": "field_562ea66c96ca9",
+            "label": "Reviews",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_562ea65096ca4",
+            "label": "Reviews Recap",
+            "name": "reviews_recap",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_562ea65196ca5",
+                    "label": "Report Status",
+                    "name": "report_status",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "New": "New",
+                        "Updated": "Updated"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_562ea65196ca6",
+                    "label": "Media Outlet",
+                    "name": "media_outlet",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "media_outlet"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_562ea65196ca7",
+                    "label": "Feature Notes",
+                    "name": "feature_notes",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1
+                },
+                {
+                    "key": "field_562ea65196ca8",
+                    "label": "Feature Links",
+                    "name": "feature_links",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_55fa3e4692627",
             "label": "Pending",
             "name": "",
@@ -328,22 +446,6 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1
-                },
-                {
-                    "key": "field_55fa3e4f9262b",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
                 },
                 {
                     "key": "field_55fe1921f79e8",
@@ -564,22 +666,6 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1
-                },
-                {
-                    "key": "field_55fa3e6e92630",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
                 },
                 {
                     "key": "field_55fe1949f79ea",
@@ -863,5 +949,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1445305308
+    "modified": 1445897847
 }
