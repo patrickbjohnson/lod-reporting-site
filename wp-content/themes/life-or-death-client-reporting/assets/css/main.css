@@ -768,10 +768,11 @@ blockquote {
     font-weight: 300;
     padding: 3px 5px;
     border-radius: 5px;
-    color: white;
-    vertical-align: text-bottom; }
+    vertical-align: text-bottom;
+    color: #222; }
     .report__status--new {
-      background: #2ecc71; }
+      background: #2ecc71;
+      color: white; }
   .report__notes-title {
     font-size: 1.125rem;
     font-weight: 500;

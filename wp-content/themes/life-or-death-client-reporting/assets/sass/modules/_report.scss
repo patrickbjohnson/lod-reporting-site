@@ -58,11 +58,12 @@ $block: report;
 		font-weight: 300;
 		padding: 3px 5px;
 		border-radius: 5px;
-		color: white;
 		vertical-align: text-bottom;
-
+		color: $color-black;
+		
 		&--new {
 			background: $color-light-green;
+			color: white;
 		}
 	}
 
