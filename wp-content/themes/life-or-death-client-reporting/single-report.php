@@ -18,8 +18,6 @@
 	$news_recap = sort_repeater('news_recap');
 	$tv_radio_recap = sort_repeater('tv_radio_recap');
 
-	var_dump($tv_radio_recap);
-
 	get_header();
 ?>
 
