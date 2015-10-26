@@ -47,7 +47,7 @@
 	<div class="notes">
 		<h2 class="report__notes-title">Notes</h2>
 		<?php echo $notes; ?>
-		<p><a href="<?php echo $links; ?>"><?php echo $links; ?></a>
+		<p><a href="<?php echo $links; ?>" target="_blank"><?php echo $links; ?></a>
 	</div>
 </div>
 
