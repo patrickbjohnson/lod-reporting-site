@@ -18,6 +18,8 @@
 	$news_recap = sort_repeater('news_recap');
 	$tv_radio_recap = sort_repeater('tv_radio_recap');
 
+	var_dump($tv_radio_recap);
+
 	get_header();
 ?>
 
@@ -61,7 +63,7 @@
 
 		<?php if( $tours_recap ): ?>
 			<div class="report" id="tours">
-			<h1 class="report__title">Tours</h1>
+			<h1 class="report__title">Tour Press</h1>
 			<?php foreach( $tours_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -83,7 +85,7 @@
 		<?php if( $pending_recap ): ?>
 			<div class="report" id="pending">
 			<h1 class="report__title">Pending</h1>
-			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+			<?php foreach( $pending_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
 					'outlet_type' => $media_outlet->outlet_type,
@@ -104,7 +106,7 @@
 		<?php if( $passed_recap ): ?>
 			<div class="report" id="passed">
 			<h1 class="report__title">Passed</h1>
-			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+			<?php foreach( $passed_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
 					'outlet_type' => $media_outlet->outlet_type,
@@ -125,7 +127,7 @@
 		<?php if( $news_recap ): ?>
 			<div class="report" id="news">
 			<h1 class="report__title">News</h1>
-			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+			<?php foreach( $news_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
 					'outlet_type' => $media_outlet->outlet_type,
@@ -146,7 +148,7 @@
 		<?php if( $tv_radio_recap ): ?>
 			<div class="report" id="radio">
 			<h1 class="report__title">TV / Radio</h1>
-			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+			<?php foreach( $tv_radio_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
 					'outlet_type' => $media_outlet->outlet_type,
