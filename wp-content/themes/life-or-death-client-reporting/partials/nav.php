@@ -1,5 +1,6 @@
 <?php 
 	$features_recap = sort_repeater('features_recap');
+	$reviews_recap = sort_repeater('reviews_recap');
 	$tours_recap = sort_repeater('tour_recap');
 	$pending_recap = sort_repeater('pending_recap');
 	$passed_recap = sort_repeater('passed_recap');
@@ -16,6 +17,10 @@
 	<div class="nav__wrapper">
 		<?php if ( $features_recap ) : ?>
 		<a class="nav__item" href="#features">Features</a>
+		<?php endif; ?>
+
+		<?php if ( $reviews_recap ) : ?>
+		<a class="nav__item" href="#reviews">Reviews</a>
 		<?php endif; ?>
 
 		<?php if ( $tours_recap ) : ?>
@@ -37,6 +42,8 @@
 		<?php if ( $tv_radio_recap ) : ?>
 		<a class="nav__item" href="#radio">TV / Radio</a>
 		<?php endif; ?>
-
 	</div>
+	<svg class="lod-logo" viewBox="0 0 379.1 265.9">
+        <use xlink:href="<?php BPAssetHelper::the_image('svgsprite.svg'); ?>#lod-logo"></use>
+    </svg>
 </nav>
