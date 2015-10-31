@@ -10,27 +10,7 @@
 	}
 	
 
-	function sort_repeater($variable) {
-		$field = get_field($variable);
-
-		// if ( empty( $field ) ) return;
-
-		$order = array();
-
-		foreach ($field as $key => $value) {
-
-			$order[$key] = array(
-				'title'			=> $value['media_outlet']->post_title,
-				'notes'			=> $value['feature_notes'],
-				'links'			=> $value['feature_links'],
-				'status'		=> $value['report_status'],
-				'post'			=> $value['media_outlet']
-			);
-		}
-
-		array_multisort( $order, SORT_ASC, $field );
-		return $order;
-	}
+	
 
 
 	// Get all report content

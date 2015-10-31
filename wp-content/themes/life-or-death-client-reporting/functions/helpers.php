@@ -10,48 +10,27 @@
 
 // Alphabetically sorts content from ACF Field
 
-// function sort_repeater($variable) {
-// 	$field = get_field($variable);
+function sort_repeater($variable) {
+	$field = get_field($variable);
 
-// 	// if ( empty( $field ) ) return;
+	// if ( empty( $field ) ) return;
 
-// 	$order = array();
+	$order = array();
 
-// 	foreach ($field as $key => $value) {
+	foreach ($field as $key => $value) {
 
-// 		$order[$key] = array(
-// 			'title'			=> $value['media_outlet']->post_title,
-// 			'notes'			=> $value['feature_notes'],
-// 			'links'			=> $value['feature_links'],
-// 			'status'		=> $value['report_status'],
-// 			'post'			=> $value['media_outlet']
-// 		);
-// 	}
+		$order[$key] = array(
+			'title'			=> $value['media_outlet']->post_title,
+			'notes'			=> $value['feature_notes'],
+			'links'			=> $value['feature_links'],
+			'status'		=> $value['report_status'],
+			'post'			=> $value['media_outlet']
+		);
+	}
 
-// 	array_multisort( $order, SORT_ASC, $field );
-// 	return $order;
-// }
-
-
-// function sort_repeater($repeater_field) {
-// 	$repeater_field = get_field($repeater_field);
-	
-// 	if ( empty($repeater_field) ) return;
-	
-// 	foreach ($repeater_field as $key => $row) {
-// 		$order[$key] = array(
-// 			'title'		=> $row['media_outlet']->post_title,
-// 			'post' 		=> $row['media_outlet'],
-// 			'notes' 	=> $row['feature_notes'],
-// 			'links' 	=> $row['feature_links'],
-// 			'status' 	=> $row['report_status'],
-// 		);
-// 	}
-
-
-// 	array_multisort( $order, SORT_DESC, $repeater_field);
-// 	return $order;
-// }
+	array_multisort( $order, SORT_ASC, $field );
+	return $order;
+}
 
 function is_logged_in() {
 	if (!is_user_logged_in()) {
