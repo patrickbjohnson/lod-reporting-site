@@ -135,12 +135,6 @@
 				</div>
 			<?php endif; ?>
 
-
-
-
-			
-
-
 		<?php endif; ?>
 
 		<?php if( $pending_recap ): ?>
@@ -190,15 +184,10 @@
 			<h1 class="report__title">News</h1>
 			<?php foreach( $news_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
+					'type'  => 'news',
 					'name'	=> $row['post']->post_title,
 					'outlet_type' => $media_outlet->outlet_type,
-					'outlet_description' => $media_outlet->outlet_description,
-					'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
-					'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
-					'notes' => $row['notes'],
 					'links' => $row['links'],
-					'facebook' => $media_outlet->facebook_account,
-					'twitter' => $media_outlet->twitter_account,
 					'report_status' => $row['status']
 				));
 				endforeach; 
