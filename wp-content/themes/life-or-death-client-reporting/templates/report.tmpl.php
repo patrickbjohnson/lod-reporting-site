@@ -38,8 +38,11 @@ $the_query = new WP_Query( $args );
 					<blockquote>
 						<?php  
 							the_sub_field('quote_text');
-							the_sub_field('quote_attribution');	
+							
 						?>
+						<footer>
+							<cite><?php the_sub_field('quote_attribution');	 ?></cite>
+						</footer>
 					</blockquote>
 			    <?php endwhile; ?>
 			<?php endif; ?>

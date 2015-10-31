@@ -5,7 +5,7 @@
 
 <div id="container">
 	<div id="content" role="main">
-
+		<h1>helo</h1>
 		<?php the_post(); ?>
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
