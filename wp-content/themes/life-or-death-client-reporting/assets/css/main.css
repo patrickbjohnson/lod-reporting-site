@@ -697,6 +697,13 @@ blockquote {
     display: block;
     background: #fff; }
 
+svg {
+  fill: currentColor; }
+
+.lod-logo {
+  width: 50px;
+  color: white; }
+
 .list-unstyled {
   list-style: none;
   padding: 0;

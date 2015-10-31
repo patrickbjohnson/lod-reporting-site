@@ -9,16 +9,45 @@
 		wp_redirect( site_url() . '/wp-admin' );
 	}
 	
+
+	function sort_repeater($variable) {
+		$field = get_field($variable);
+
+		// if ( empty( $field ) ) return;
+
+		$order = array();
+
+		foreach ($field as $key => $value) {
+
+			$order[$key] = array(
+				'title'			=> $value['media_outlet']->post_title,
+				'notes'			=> $value['feature_notes'],
+				'links'			=> $value['feature_links'],
+				'status'		=> $value['report_status'],
+				'post'			=> $value['media_outlet']
+			);
+		}
+
+		array_multisort( $order, SORT_ASC, $field );
+		return $order;
+	}
+
+
 	// Get all report content
 	// then sort it and get ready to be printed to the screen
 	$features_recap = sort_repeater('features_recap');
-	$tours_recap = sort_repeater('tour_recap');
+	$tour_recap_pending = sort_repeater('tour_recap_pending');
+	$tour_recap_passed = sort_repeater('tour_recap_passed');
+	$tour_recap_confirmed = sort_repeater('tour_recap_confirmed');
+	
 	$pending_recap = sort_repeater('pending_recap');
 	$passed_recap = sort_repeater('passed_recap');
 	$news_recap = sort_repeater('news_recap');
 	$tv_radio_recap = sort_repeater('tv_radio_recap');
 
 	get_header();
+
+
 ?>
 
 <?php the_partial('nav'); ?>
@@ -40,6 +69,7 @@
 		<?php if( $features_recap ): ?>
 			<div class="report" id="features">
 			<h1 class="report__title">Features</h1>
+					
 			<?php foreach( $features_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 				the_partial('report-section', array(
 					'name'	=> $row['post']->post_title,
@@ -55,29 +85,86 @@
 				));
 				endforeach; 
 			?>
-			
 			</div>
 		<?php endif; ?>
 
-		<?php if( $tours_recap ): ?>
+		
+		<?php 
+			
+		if ( $tour_recap_pending || $tour_recap_passed || $tour_recap_confirmed ) : ?>
+
 			<div class="report" id="tours">
 			<h1 class="report__title">Tour Press</h1>
-			<?php foreach( $tours_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
-				the_partial('report-section', array(
-					'name'	=> $row['post']->post_title,
-					'outlet_type' => $media_outlet->outlet_type,
-					'outlet_description' => $media_outlet->outlet_description,
-					'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
-					'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
-					'notes' => $row['notes'],
-					'links' => $row['links'],
-					'facebook' => $media_outlet->facebook_account,
-					'twitter' => $media_outlet->twitter_account,
-					'report_status' => $row['status']
-				));
-				endforeach; 
-			?>
+		
+			<?php if ($tour_recap_pending) : ?>
+			<div class="report__sub-group">
+				<h2 class="report__subtitle">Pending</h2>
+				<?php foreach( $tour_recap_pending as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+					the_partial('report-section', array(
+						'name'	=> $row['post']->post_title,
+						'outlet_type' => $media_outlet->outlet_type,
+						'outlet_description' => $media_outlet->outlet_description,
+						'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
+						'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
+						'notes' => $row['notes'],
+						'links' => $row['links'],
+						'facebook' => $media_outlet->facebook_account,
+						'twitter' => $media_outlet->twitter_account,
+						'report_status' => $row['status']
+					));
+					endforeach; 
+				?>
 			</div>
+			<?php endif; ?>
+
+			<?php if ($tour_recap_passed) : ?>
+				<div class="report__sub-group">
+					<h2 class="report__subtitle">Passed</h2>
+					<?php foreach( $tour_recap_passed as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+						the_partial('report-section', array(
+							'name'	=> $row['post']->post_title,
+							'outlet_type' => $media_outlet->outlet_type,
+							'outlet_description' => $media_outlet->outlet_description,
+							'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
+							'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
+							'notes' => $row['notes'],
+							'links' => $row['links'],
+							'facebook' => $media_outlet->facebook_account,
+							'twitter' => $media_outlet->twitter_account,
+							'report_status' => $row['status']
+						));
+						endforeach; 
+					?>
+				</div>
+			<?php endif; ?>
+			
+			<?php if ($tour_recap_confirmed) : ?>
+				<div class="report__sub-group">
+					<h2 class="report__subtitle">Confirmed</h2>
+					<?php foreach( $tour_recap_confirmed as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+						the_partial('report-section', array(
+							'name'	=> $row['post']->post_title,
+							'outlet_type' => $media_outlet->outlet_type,
+							'outlet_description' => $media_outlet->outlet_description,
+							'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
+							'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
+							'notes' => $row['notes'],
+							'links' => $row['links'],
+							'facebook' => $media_outlet->facebook_account,
+							'twitter' => $media_outlet->twitter_account,
+							'report_status' => $row['status']
+						));
+						endforeach; 
+					?>
+				</div>
+			<?php endif; ?>
+
+
+
+
+			
+
+
 		<?php endif; ?>
 
 		<?php if( $pending_recap ): ?>

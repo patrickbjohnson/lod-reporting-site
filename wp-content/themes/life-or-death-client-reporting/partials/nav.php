@@ -43,7 +43,4 @@
 		<a class="nav__item" href="#radio">TV / Radio</a>
 		<?php endif; ?>
 	</div>
-	<svg class="lod-logo" viewBox="0 0 379.1 265.9">
-        <use xlink:href="<?php BPAssetHelper::the_image('svgsprite.svg'); ?>#lod-logo"></use>
-    </svg>
 </nav>
