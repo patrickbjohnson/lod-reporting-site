@@ -1,7 +1,7 @@
 <?php 
 	$features_recap = sort_repeater('features_recap');
 	$reviews_recap = sort_repeater('reviews_recap');
-	$tours_recap = sort_repeater('tour_recap');
+	$tours_recap = sort_repeater('tour_recap_pending') || sort_repeater('tour_recap_passed') || sort_repeater('tour_recap_completed');
 	$pending_recap = sort_repeater('pending_recap');
 	$passed_recap = sort_repeater('passed_recap');
 	$news_recap = sort_repeater('news_recap');

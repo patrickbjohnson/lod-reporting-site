@@ -13,7 +13,7 @@
 function sort_repeater($variable) {
 	$field = get_field($variable);
 
-	// if ( empty( $field ) ) return;
+	if ( empty( $field ) ) return;
 
 	$order = array();
 

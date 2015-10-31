@@ -740,8 +740,11 @@ svg {
  * Modifier: report--modifier
  */
 .report {
+  max-width: 750px;
   margin-top: 35px;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto; }
   @media (min-width: 700px) {
     .report {
       margin-top: 75px;
@@ -753,10 +756,11 @@ svg {
     @media (min-width: 700px) {
       .report__title {
         font-size: 1.75rem; } }
+  .report__subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase; }
   .report__item {
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 50px; }
   .report__header {
     margin-bottom: 25px; }

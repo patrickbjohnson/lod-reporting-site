@@ -9,10 +9,6 @@
 		wp_redirect( site_url() . '/wp-admin' );
 	}
 	
-
-	
-
-
 	// Get all report content
 	// then sort it and get ready to be printed to the screen
 	$features_recap = sort_repeater('features_recap');
@@ -37,7 +33,7 @@
 	<?php if ( have_post ) : while ( have_posts() ) : the_post(); ?>
 		<div class="hero">
 			<div class="page-container">
-				<h2 class="hero__client"><?php echo $current_user->display_name; ?></h2>
+				<h2 class="hero__client"><?php echo $report->report_client['display_name']; ?></h2>
 				<h1 class="hero__title"><?php echo $report->get_title(); ?></h1>
 				<?php if ($report->label) : ?>
 					<h3 class="hero__label"><?php echo $report->label; ?></h3>

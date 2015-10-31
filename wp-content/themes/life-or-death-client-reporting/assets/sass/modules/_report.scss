@@ -6,8 +6,11 @@
 
 $block: report;
 .report {
+	max-width: 750px;
 	margin-top: 35px;
 	margin-bottom: 35px;
+	margin-left: auto;
+	margin-right: auto;
 
 	@include respond-to('small and up') {
 		margin-top: 75px;
@@ -24,10 +27,13 @@ $block: report;
 		}
 	}
 
+	&__subtitle {
+		font-size: rem(24);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
 	&__item {
-		max-width: 750px;
-		margin-left: auto;
-		margin-right: auto;
 		margin-bottom: 50px;
 	}
 	
