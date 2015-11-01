@@ -11,20 +11,17 @@
 	
 	// Get all report content
 	// then sort it and get ready to be printed to the screen
-	$features_recap = sort_repeater('features_recap');
-
-	$tour_recap_pending = sort_repeater('tour_recap_pending');
-	$tour_recap_passed = sort_repeater('tour_recap_passed');
-	$tour_recap_confirmed = sort_repeater('tour_recap_confirmed');
-	
+	$features_recap = sort_repeater('features_recap');	
 	$pending_recap = sort_repeater('pending_recap');
 	$passed_recap = sort_repeater('passed_recap');
 	$news_recap = sort_repeater('news_recap');
 	$tv_radio_recap = sort_repeater('tv_radio_recap');
 	$reviews_recap = sort_repeater('reviews_recap');
+	$tour_recap_pending = sort_repeater('tour_recap_pending');
+	$tour_recap_passed = sort_repeater('tour_recap_passed');
+	$tour_recap_confirmed = sort_repeater('tour_recap_confirmed');
+
 	get_header();
-
-
 ?>
 
 <?php the_partial('nav'); ?>
@@ -40,7 +37,6 @@
 					<h3 class="hero__label"><?php echo $report->label; ?></h3>
 				<?php endif; ?>
 				<h4 class="hero__date"><?php echo $report->report_date; ?></h4>
-
 			</div>
 		</div>
 		<div class="page-container"> 
