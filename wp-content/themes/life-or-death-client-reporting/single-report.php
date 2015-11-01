@@ -40,6 +40,7 @@
 					<h3 class="hero__label"><?php echo $report->label; ?></h3>
 				<?php endif; ?>
 				<h4 class="hero__date"><?php echo $report->report_date; ?></h4>
+
 			</div>
 		</div>
 		<div class="page-container"> 
@@ -239,6 +240,6 @@
 		</div>
 	<?php endwhile; endif; wp_reset_postdata(); ?>
 </div>
-
+<?php if (function_exists("wpptopdfenh_display_icon")) echo wpptopdfenh_display_icon();?>
 
 <?php get_footer(); ?>
