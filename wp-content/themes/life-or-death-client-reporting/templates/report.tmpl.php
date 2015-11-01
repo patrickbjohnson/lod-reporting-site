@@ -24,10 +24,10 @@ $the_query = new WP_Query( $args );
 
 ?>
 <div class="hero">
-	<h1><?php echo $current_user->display_name; ?> Dashboard</h1>
+	<?php var_dump($post); ?>
+	<h1><?php echo $post->report_client; ?> Dashboard</h1>
 </div>
 <div class="page-container">
-	<h1><?php echo $post->get_title(); ?></h1>
 	<?php if ( $the_query->have_posts() ) : ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $report = new Report_View_Model( $post );?>
 			<a href="<?php the_permalink(); ?>"><?php echo $report->get_title(); ?></a>
