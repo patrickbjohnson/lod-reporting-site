@@ -1,0 +1,118 @@
+/**
+ * Block: report
+ * Element: report__element
+ * Modifier: report--modifier
+ */
+
+$block: report;
+.report {
+	max-width: 750px;
+	margin-top: 35px;
+	margin-bottom: 35px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include respond-to('small and up') {
+		margin-top: 75px;
+		margin-bottom: 75px;
+	}
+
+	&__title {
+		font-size: rem(20);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include respond-to('small and up') {
+			font-size: rem(28);
+		}
+	}
+
+	&__subtitle {
+		font-size: rem(24);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		margin-bottom: 50px;
+	}
+	
+	&__header {
+		margin-bottom: 25px;
+	}
+
+	&__item-title {
+		font-size: rem(22);
+		font-weight: 500;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&__outlet-description {
+		p {
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__status {
+		display: inline-block;
+		font-size: rem(10);
+		text-transform: uppercase;
+		font-weight: 300;
+		padding: 3px 5px;
+		border-radius: 5px;
+		vertical-align: text-bottom;
+		color: $color-black;
+
+		&--new {
+			background: $color-light-green;
+			color: white;
+		}
+	}
+
+	&__notes-title {
+		font-size: rem(18);
+		font-weight: 500;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&__stats,
+	&__social {
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		li {
+			margin-right: 10px;
+			font-size: rem(14);
+		}
+	}
+
+	&__stats {
+		li {
+			display: block;
+			text-transform: uppercase;
+
+			@include respond-to('small and up') {
+				display: inline-block;
+			}
+		}
+
+		img {
+			position: relative;
+			display: inline-block;
+			top: 7px;
+			max-width: 25px;
+			margin-right: 3px;
+		}
+	}
+
+	&__social {
+		
+	}
+
+}

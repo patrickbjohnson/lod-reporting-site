@@ -23,7 +23,7 @@ function report() {
 		'label'               => __( 'Report', 'text_domain' ),
 		'description'         => __( 'Client Report', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( 'title', ),
 		'taxonomies'          => array( 'category', 'post_tag' ),
 		'hierarchical'        => false,
 		'public'              => true,
@@ -37,6 +37,7 @@ function report() {
 		'has_archive'         => true,		
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
+		'rewrite'			  => array('slug' => 'reports'),
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'report', $args );
