@@ -103,21 +103,58 @@ function twitter_follower_count($user) {
 
 function test_post_publish( $post_id, $post, $update ) {
 		
+		if (get_post_type( $post_id ) != 'report') return;
+
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
+		$post_status = get_post($post_id)->post_status;
+		if ($post_status != 'publish') return;
+		
 		// If this is just a revision, don't send the email.
 		if ( wp_is_post_revision( $post_id ) ) return;
+
 
 		$post_title = get_the_title( $post_id );
 		$post_url = get_permalink( $post_id );
 		$subject = 'A post has been updated';
 
-		$message = "A post has been updated on your website:\n\n";
-		$message .= $post_title . ": " . $post_url;
+		
+		$user_id = $_POST['acf']['field_55fa3ddba01bd'];
+		$user_data = get_userdata( $user_id);
+
+		$user_email = $user_data->user_email;
+		$user_display_name = $user_data->display_name;
+
+		var_dump($user_email, $user_display_name);
+
+		$message = "Hi " . $user_display_name . "!\n\n";
+		$message .= "Your report is ready for review.";
+		$message .= "You can view it here: " . $post_url;
+		// $message .= $post_title . ": " . $post_url;
 
 		// // Send email to admin.
-		wp_mail( 'p@pbj.me', $subject, $message );
+		wp_mail( 'im@pbj.me', $subject, $message );
+
+
+
+
+		// FIRST INSTANCE
+		// Admin creates report, assigns client. Hits publish
+
+		// SECOND INSTANCE
+		// Admin creates report. Doesn't assign client. Hits publish/update/save draft
+
+
+		//THIRD INSTANCE
+		// Admin creates report. Assigns incorrect client. publishes. 
+		// Then admin re-assigns client then updates. 
+		// if revision, and client object changes. resend the report.
+
 }
+
+
+
+
 
 
 add_action( 'save_post_report', 'test_post_publish', 10, 1 );
