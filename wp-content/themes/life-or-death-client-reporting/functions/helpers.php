@@ -98,3 +98,37 @@ function twitter_follower_count($user) {
 	$get_count = json_decode( $twitter_data, true );
 	return number_format( $get_count['followers_count'] );  
 }
+
+
+
+function test_post_publish( $post_id, $post, $update ) {
+		
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+
+		// If this is just a revision, don't send the email.
+		if ( wp_is_post_revision( $post_id ) ) return;
+
+		$post_title = get_the_title( $post_id );
+		$post_url = get_permalink( $post_id );
+		$subject = 'A post has been updated';
+
+		$message = "A post has been updated on your website:\n\n";
+		$message .= $post_title . ": " . $post_url;
+
+		// // Send email to admin.
+		wp_mail( 'p@pbj.me', $subject, $message );
+}
+
+
+add_action( 'save_post_report', 'test_post_publish', 10, 1 );
+// add_action(  'publish_report',  'test_post_publish', 10, 2 );
+// add_action('future_to_publish', 'test_post_publish');
+// add_action('new_to_publish', 'test_post_publish');
+// add_action('draft_to_publish' ,'test_post_publish');
+// add_action('auto-draft_to_publish' ,'test_post_publish');
+
+
+// add_action(  'new_to_publish',  'test_post_publish', 10, 1 );
+// add_action(  'draft_to_publish',  'test_post_publish', 10, 1 );
+// add_action(  'pending_to_publish',  'test_post_publish', 10, 1 );
+

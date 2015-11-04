@@ -21,12 +21,18 @@
 	$tour_recap_passed = sort_repeater('tour_recap_passed');
 	$tour_recap_confirmed = sort_repeater('tour_recap_confirmed');
 
+
+	$dompdf = new DOMPDF();
+	$html = "<h1>hello this is some html";
+	$dompdf->load_html($html);
+	$dompdf->render();
+
 	get_header();
 ?>
 
 <?php the_partial('nav'); ?>
-
-
+	<?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
+	
 	
 	<?php if ( have_post ) : while ( have_posts() ) : the_post(); ?>
 		<div class="hero">

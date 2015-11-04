@@ -22,10 +22,10 @@ if ( !current_user_can( 'manage_options' ) ) {
 
 $the_query = new WP_Query( $args ); 
 
+
 ?>
 <div class="hero">
-	<?php var_dump($post); ?>
-	<h1><?php echo $post->report_client; ?> Dashboard</h1>
+	<h1><?php echo get_user_meta($current_user->ID)['nickname'][0]; ?> Dashboard</h1>
 </div>
 <div class="page-container">
 	<?php if ( $the_query->have_posts() ) : ?>
