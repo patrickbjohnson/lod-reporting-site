@@ -125,15 +125,15 @@ function test_post_publish( $post_id, $post, $update ) {
 		$user_email = $user_data->user_email;
 		$user_display_name = $user_data->display_name;
 
-		var_dump($user_email, $user_display_name);
-
 		$message = "Hi " . $user_display_name . "!\n\n";
 		$message .= "Your report is ready for review.";
 		$message .= "You can view it here: " . $post_url;
+
+		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
 		// $message .= $post_title . ": " . $post_url;
 
 		// // Send email to admin.
-		wp_mail( 'im@pbj.me', $subject, $message );
+		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
 
 
 
@@ -149,6 +149,13 @@ function test_post_publish( $post_id, $post, $update ) {
 		// Admin creates report. Assigns incorrect client. publishes. 
 		// Then admin re-assigns client then updates. 
 		// if revision, and client object changes. resend the report.
+
+
+		// sent email at 11:26
+
+		//QUESTION: What needs to be in place in order for Admin to send 
+		// the report? 
+		// How can we safe gaurd them from sending emails to early?
 
 }
 
