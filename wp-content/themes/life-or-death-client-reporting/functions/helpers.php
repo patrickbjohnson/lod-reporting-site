@@ -99,87 +99,72 @@ function twitter_follower_count($user) {
 	return number_format( $get_count['followers_count'] );  
 }
 
-// function report_email_set_content_type(){
-//     return "text/html";
-// }
-// add_filter( 'wp_mail_content_type','report_email_set_content_type' );
+function report_email_set_content_type(){
+    return "text/html";
+}
+add_filter( 'wp_mail_content_type','report_email_set_content_type' );
 
-// function send_email_on_post_save( $post_id ) {
+function send_email_on_post_save( $post_id ) {
 		
-// 		if (get_post_type( $post_id ) != 'report') return;
+		if (get_post_type( $post_id ) != 'report') return;
 
-// 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
-// 		$post_status = get_post($post_id)->post_status;
-// 		if ($post_status != 'publish') return;
+		$post_status = get_post($post_id)->post_status;
+		if ($post_status != 'publish') return;
 		
-// 		// If this is just a revision, don't send the email.
-// 		if ( wp_is_post_revision( $post_id ) ) return;
+		// If this is just a revision, don't send the email.
+		if ( wp_is_post_revision( $post_id ) ) return;
 
 
-// 		$post_title = get_the_title( $post_id );
-// 		$post_url = get_permalink( $post_id );
-// 		$subject = 'A post has been updated';
+		$post_title = get_the_title( $post_id );
+		$post_url = get_permalink( $post_id );
+		$subject = 'A post has been updated';
 
 		
-// 		$user_id = $_POST['acf']['field_55fa3ddba01bd'];
-// 		$user_data = get_userdata( $user_id);
+		$user_id = $_POST['acf']['field_55fa3ddba01bd'];
+		$user_data = get_userdata( $user_id);
 
-// 		$user_email = $user_data->user_email;
-// 		$user_display_name = $user_data->display_name;
+		$user_email = $user_data->user_email;
+		$user_display_name = $user_data->display_name;
 
-// 		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
-// 		$message .= "Your report is ready for viewing\n\n";
-// 		$message .= "Check it out <a href='" . $post_url . "'>here</a>";
-
-
-// 		// $message .= "Your report is ready for review.";
-// 		// $message .= "You can view it here: " . ;
-
-// 		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
-
-// 		// // Send email to admin.
-// 		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
+		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
+		$message .= "Your report is ready for viewing\n\n";
+		$message .= "Check it out <a href='" . $post_url . "'>here</a>";
 
 
+		// $message .= "Your report is ready for review.";
+		// $message .= "You can view it here: " . ;
 
+		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
 
-// 		// FIRST INSTANCE
-// 		// Admin creates report, assigns client. Hits publish
-
-// 		// SECOND INSTANCE
-// 		// Admin creates report. Doesn't assign client. Hits publish/update/save draft
-
-
-// 		//THIRD INSTANCE
-// 		// Admin creates report. Assigns incorrect client. publishes. 
-// 		// Then admin re-assigns client then updates. 
-// 		// if revision, and client object changes. resend the report.
-
-
-// 		// sent email at 11:26
-
-// 		//setn emial at 11:46
-
-// 		//QUESTION: What needs to be in place in order for Admin to send 
-// 		// the report? 
-// 		// How can we safe gaurd them from sending emails to early?
-// }
+		// // Send email to admin.
+		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
 
 
 
 
+		// FIRST INSTANCE
+		// Admin creates report, assigns client. Hits publish
+
+		// SECOND INSTANCE
+		// Admin creates report. Doesn't assign client. Hits publish/update/save draft
 
 
-// add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
-// add_action(  'publish_report',  'test_post_publish', 10, 2 );
-// add_action('future_to_publish', 'test_post_publish');
-// add_action('new_to_publish', 'test_post_publish');
-// add_action('draft_to_publish' ,'test_post_publish');
-// add_action('auto-draft_to_publish' ,'test_post_publish');
+		//THIRD INSTANCE
+		// Admin creates report. Assigns incorrect client. publishes. 
+		// Then admin re-assigns client then updates. 
+		// if revision, and client object changes. resend the report.
 
 
-// add_action(  'new_to_publish',  'test_post_publish', 10, 1 );
-// add_action(  'draft_to_publish',  'test_post_publish', 10, 1 );
-// add_action(  'pending_to_publish',  'test_post_publish', 10, 1 );
+		// sent email at 11:26
+
+		//setn emial at 11:46
+
+		//QUESTION: What needs to be in place in order for Admin to send 
+		// the report? 
+		// How can we safe gaurd them from sending emails to early?
+}
+
+add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
 
