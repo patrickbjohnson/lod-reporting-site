@@ -99,9 +99,12 @@ function twitter_follower_count($user) {
 	return number_format( $get_count['followers_count'] );  
 }
 
+function report_email_set_content_type(){
+    return "text/html";
+}
+add_filter( 'wp_mail_content_type','report_email_set_content_type' );
 
-
-function test_post_publish( $post_id, $post, $update ) {
+function send_email_on_post_save( $post_id ) {
 		
 		if (get_post_type( $post_id ) != 'report') return;
 
@@ -125,12 +128,15 @@ function test_post_publish( $post_id, $post, $update ) {
 		$user_email = $user_data->user_email;
 		$user_display_name = $user_data->display_name;
 
-		$message = "Hi " . $user_display_name . "!\n\n";
-		$message .= "Your report is ready for review.";
-		$message .= "You can view it here: " . $post_url;
+		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
+		$message .= "Your report is ready for viewing\n\n";
+		$message .= "Check it out <a href='" . $post_url . "'>here</a>";
+
+
+		// $message .= "Your report is ready for review.";
+		// $message .= "You can view it here: " . ;
 
 		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
-		// $message .= $post_title . ": " . $post_url;
 
 		// // Send email to admin.
 		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
@@ -153,6 +159,8 @@ function test_post_publish( $post_id, $post, $update ) {
 
 		// sent email at 11:26
 
+		//setn emial at 11:46
+
 		//QUESTION: What needs to be in place in order for Admin to send 
 		// the report? 
 		// How can we safe gaurd them from sending emails to early?
@@ -164,7 +172,7 @@ function test_post_publish( $post_id, $post, $update ) {
 
 
 
-add_action( 'save_post_report', 'test_post_publish', 10, 1 );
+add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
 // add_action(  'publish_report',  'test_post_publish', 10, 2 );
 // add_action('future_to_publish', 'test_post_publish');
 // add_action('new_to_publish', 'test_post_publish');
