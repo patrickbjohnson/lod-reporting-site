@@ -128,18 +128,17 @@ function send_email_on_post_save( $post_id ) {
 		$user_email = $user_data->user_email;
 		$user_display_name = $user_data->display_name;
 
+		var_dump($user_email);
+
 		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
 		$message .= "Your report is ready for viewing\n\n";
 		$message .= "Check it out <a href='" . $post_url . "'>here</a>";
 
-
-		// $message .= "Your report is ready for review.";
-		// $message .= "You can view it here: " . ;
-
+		
 		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
 
 		// // Send email to admin.
-		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
+		wp_mail( $user_email, $subject, $message, $headers );
 
 
 
