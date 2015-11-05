@@ -22,10 +22,10 @@
 	$tour_recap_confirmed = sort_repeater('tour_recap_confirmed');
 
 
-	$dompdf = new DOMPDF();
-	$html = "<h1>hello this is some html";
-	$dompdf->load_html($html);
-	$dompdf->render();
+	// $dompdf = new DOMPDF();
+	// $html = "<h1>hello this is some html";
+	// $dompdf->load_html($html);
+	// $dompdf->render();
 
 	get_header();
 ?>
