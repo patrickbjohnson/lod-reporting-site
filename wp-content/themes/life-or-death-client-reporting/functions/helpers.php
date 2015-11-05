@@ -119,7 +119,7 @@ function send_email_on_post_save( $post_id ) {
 
 		$post_title = get_the_title( $post_id );
 		$post_url = get_permalink( $post_id );
-		$subject = 'A post has been updated';
+		$subject = 'User Email post test';
 
 		
 		$user_id = $_POST['acf']['field_55fa3ddba01bd'];
@@ -128,7 +128,6 @@ function send_email_on_post_save( $post_id ) {
 		$user_email = $user_data->user_email;
 		$user_display_name = $user_data->display_name;
 
-		var_dump($user_email);
 
 		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
 		$message .= "Your report is ready for viewing\n\n";
