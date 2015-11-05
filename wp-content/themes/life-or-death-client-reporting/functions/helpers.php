@@ -139,7 +139,7 @@ function send_email_on_post_save( $post_id ) {
 		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
 
 		// // Send email to admin.
-		wp_mail( $user_email, $subject, $message, $headers );
+		wp_mail( 'patrickjohnson9@gmail.com', $subject, $message, $headers );
 
 
 
