@@ -172,7 +172,7 @@ function send_email_on_post_save( $post_id ) {
 
 
 
-add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
+// add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
 // add_action(  'publish_report',  'test_post_publish', 10, 2 );
 // add_action('future_to_publish', 'test_post_publish');
 // add_action('new_to_publish', 'test_post_publish');
