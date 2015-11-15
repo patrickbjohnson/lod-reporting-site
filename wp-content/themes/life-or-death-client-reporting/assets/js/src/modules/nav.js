@@ -36,6 +36,5 @@ module.exports = function (el) {
     	$nav.removeClass('nav--is-open');
     }
 
-
 };
 

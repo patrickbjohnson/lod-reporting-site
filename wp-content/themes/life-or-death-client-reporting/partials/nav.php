@@ -44,5 +44,10 @@
 			<a class="nav__item" href="#radio">TV / Radio</a>
 			<?php endif; ?>
 		</div>
+		<a href="#" class="nav__logo" target="_blank">
+			<svg role="img" title="CodePen" viewBox="0 0 184 129">
+			    <use xlink:href="<?php BPAssetHelper::the_image('svgsprite.svg');?>#lod-logo"/>
+			</svg>
+		</a>
 	</nav>
 <?php endif; ?>

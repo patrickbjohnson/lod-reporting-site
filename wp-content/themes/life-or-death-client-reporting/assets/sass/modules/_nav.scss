@@ -7,10 +7,10 @@
 $block: nav;
 .nav {
 	@include transition(padding .300s ease-out);
+	position: relative;
 	width: 100%;
 	float: left;
 	background: rgba(0,0,0,0.5);
-	
 	padding-top: 15px;
 	padding-bottom: 15px;	
 
@@ -30,6 +30,7 @@ $block: nav;
 	}
 	
 	&__wrapper {
+		position: relative;
 		display: none;
 		
 		@include respond-to('small and up') {
@@ -53,6 +54,31 @@ $block: nav;
 		@include respond-to('small and up') {
 			padding-left: 10px;
 			padding-right: 10px;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		float: right;
+		color: white;
+
+		@include respond-to('small and up') {
+			@include vertically-centered;
+			@include transition(color .250s ease-out);
+			position: absolute;
+		}
+
+		svg {
+			display: block;
+			width: 43px;
+			height: 30px;
+			
+			@include respond-to('small and up') {
+				width: 57px;
+				height: 40px;
+			}
 		}
 	}
 }

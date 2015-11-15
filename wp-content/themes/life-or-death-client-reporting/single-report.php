@@ -32,12 +32,20 @@
 <?php if ( have_post ) : while ( have_posts() ) : the_post(); ?>
 	<div class="hero">
 		<div class="page-container">
-			<h2 class="hero__client"><?php echo $report->report_client['display_name']; ?></h2>
-			<h1 class="hero__title"><?php echo $report->get_title(); ?></h1>
-			<?php if ($report->label) : ?>
-				<h3 class="hero__label"><?php echo $report->label; ?></h3>
-			<?php endif; ?>
-			<h4 class="hero__date"><?php echo $report->report_date; ?></h4>
+			<div class="client-mantle">
+				<div class="client-mantle__img-wrap">
+					<img class="" src="<?php echo get_field( 'client_image', 'user_' . $report->report_client['ID'] )['url']; ?>" alt="">
+				</div>
+				<div class="client-mantle__info">
+					<h2 class="hero__client"><?php echo $report->report_client['display_name']; ?></h2>
+					<h1 class="hero__title"><?php echo $report->get_title(); ?></h1>
+					<?php if ($report->label) : ?>
+						<h3 class="hero__label"><?php echo $report->label; ?></h3>
+					<?php endif; ?>
+					<h4 class="hero__date"><?php echo $report->report_date; ?></h4>
+					<?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="page-container"> 

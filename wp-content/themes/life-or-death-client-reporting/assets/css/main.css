@@ -570,6 +570,12 @@ blockquote {
   margin-left: 0;
   margin-right: 0; }
 
+img {
+  max-width: 100%; }
+
+svg {
+  fill: currentColor; }
+
 /**
  * Set text selection color
  */
@@ -641,6 +647,7 @@ blockquote {
   -webkit-transition: padding 0.3s ease-out;
   -moz-transition: padding 0.3s ease-out;
   transition: padding 0.3s ease-out;
+  position: relative;
   width: 100%;
   float: left;
   background: rgba(0, 0, 0, 0.5);
@@ -657,6 +664,7 @@ blockquote {
     float: left;
     padding-top: 15px; }
   .nav__wrapper {
+    position: relative;
     display: none; }
     @media (min-width: 700px) {
       .nav__wrapper {
@@ -675,6 +683,33 @@ blockquote {
       .nav__item {
         padding-left: 10px;
         padding-right: 10px; } }
+  .nav__logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    float: right;
+    color: white; }
+    @media (min-width: 700px) {
+      .nav__logo {
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: relative;
+        top: 50%;
+        -webkit-transition: color 0.25s ease-out;
+        -moz-transition: color 0.25s ease-out;
+        transition: color 0.25s ease-out;
+        position: absolute; } }
+    .nav__logo svg {
+      display: block;
+      width: 43px;
+      height: 30px; }
+      @media (min-width: 700px) {
+        .nav__logo svg {
+          width: 57px;
+          height: 40px; } }
 
 .menu {
   -webkit-appearance: none;
@@ -833,6 +868,16 @@ svg {
     color: #626262;
     text-transform: lowercase;
     text-align: center; }
+
+.printfriendly {
+  margin-top: 10px; }
+  .printfriendly a {
+    display: inline-block;
+    padding: 5px 8px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; }
 
 /*-------------------------------------------- */
 /** Pages */

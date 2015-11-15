@@ -93,6 +93,14 @@ blockquote {
     margin-right: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
+svg {
+    fill: currentColor;
+}
+
 /**
  * Set text selection color
  */

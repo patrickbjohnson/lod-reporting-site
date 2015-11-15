@@ -108,7 +108,6 @@ webpackJsonp([0],[
 	    	$nav.removeClass('nav--is-open');
 	    }
 	
-	
 	};
 	
 

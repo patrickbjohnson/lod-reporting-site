@@ -507,7 +507,7 @@
             "min": "",
             "max": "",
             "layout": "row",
-            "button_label": "Add Market",
+            "button_label": "Add Tour Market",
             "sub_fields": [
                 {
                     "key": "field_564164fafe03e",
@@ -563,7 +563,7 @@
                     "min": "",
                     "max": "",
                     "layout": "block",
-                    "button_label": "Add Tour Location",
+                    "button_label": "Add Tour Press",
                     "sub_fields": [
                         {
                             "key": "field_56416510fe040",
@@ -1016,5 +1016,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1447553933
+    "modified": 1447555259
 }
