@@ -6,7 +6,7 @@
 
 $block: report;
 .report {
-	max-width: 750px;
+	max-width: 1000px;
 	margin-top: 35px;
 	margin-bottom: 35px;
 	margin-left: auto;
@@ -18,12 +18,35 @@ $block: report;
 	}
 
 	&__title {
+		position: relative;
+		margin-bottom: 25px;
 		font-size: rem(20);
 		text-align: center;
 		text-transform: uppercase;
 
+		&:before, 
+		&:after {
+			content: "";
+			display: block;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			background: lighten($color-black, 60%);
+		}
+
 		@include respond-to('small and up') {
-			font-size: rem(28);
+			margin-bottom: 50px;
+			font-size: rem(30);
+		}
+
+		span {
+			position: relative;
+			display: inline-block;
+			padding-left: 15px;
+			padding-right: 15px;
+			background-color: $color-white;
+			z-index: $z-1;
 		}
 	}
 
@@ -38,19 +61,32 @@ $block: report;
 	}
 
 	&__item {
-		margin-bottom: 25px;
+		margin-bottom: 45px;
+
+		@include respond-to('small and up') {
+			padding-right: 25px;
+			padding-left: 25px;
+		}
+
+		@include respond-to('medium and up') {
+			padding-right: 35px;
+			padding-left: 35px;
+		}
 	}
 	
 	&__header {
-		margin-bottom: 25px;
+		margin-bottom: 15px;
 	}
 
 	&__item-title {
 		font-size: rem(22);
-		font-weight: 500;
+		font-weight: 600;
 		margin-top: 5px;
 		margin-bottom: 5px;
+		text-transform: uppercase;
+		color: lighten($color-black, 8%);
 	}
+
 
 	&__outlet-description {
 		p {
@@ -63,14 +99,18 @@ $block: report;
 	}
 
 	&__status {
+		position: relative;
 		display: inline-block;
-		font-size: rem(10);
-		text-transform: uppercase;
-		font-weight: 300;
+		top: -2px;
 		padding: 3px 5px;
 		border-radius: 5px;
-		vertical-align: text-bottom;
+		margin-left: 5px;
+		font-size: rem(10);
+		font-weight: 300;
+		text-transform: uppercase;
+		vertical-align: middle;
 		color: $color-black;
+		
 
 		&--new {
 			background: $color-light-green;
@@ -79,11 +119,16 @@ $block: report;
 	}
 
 	&__notes-title {
-		font-size: rem(18);
+		font-size: rem(16);
 		font-weight: 500;
 		margin-top: 5px;
 		margin-bottom: 5px;
+		text-transform: uppercase;
+		font-weight: 600;
 	}
+	
+
+	
 
 	&__stats,
 	&__social {
@@ -119,4 +164,14 @@ $block: report;
 		
 	}
 
+}
+
+.notes {
+	p {
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

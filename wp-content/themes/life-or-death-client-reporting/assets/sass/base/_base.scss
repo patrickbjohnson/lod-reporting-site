@@ -15,7 +15,7 @@ body {
 
 body {
     background: $body-bg-color;
-    font-family: $primary-font;
+    font-family: $body-font;
     font-weight: $base-font-weight;
     line-height: $base-line-height;
     color: $body-font-color;
@@ -61,6 +61,17 @@ h6,
     color: $h6-font-color;
     font-size: rem($h6-font-size);
     font-weight: $base-font-weight;
+}
+
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+    font-family: $primary-font;
+    font-weight: 600;
 }
 
 p {

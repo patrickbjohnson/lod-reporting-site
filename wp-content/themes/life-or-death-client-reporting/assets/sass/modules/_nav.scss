@@ -35,13 +35,18 @@ $block: nav;
 		
 		@include respond-to('small and up') {
 			display: block;
+			float: left;
+			max-width: 1000px;
+			margin-left: 25px;
 		}
 	}
 
 	&__item {
-
+		@include transition(color .250s ease-out);
+		font-family: $primary-font;
 		color: $color-white;
 		text-decoration: none;
+		text-transform: uppercase;
 
 		@include respond-to('up to small') {
 			display: block;

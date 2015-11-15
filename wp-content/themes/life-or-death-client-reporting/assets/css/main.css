@@ -508,7 +508,7 @@ body {
 
 body {
   background: #fff;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Source Serif Pro", serif;
   font-weight: 400;
   line-height: 1.4;
   color: #222; }
@@ -548,6 +548,15 @@ h6,
   color: #222;
   font-size: 1rem;
   font-weight: 400; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600; }
 
 p {
   margin-top: 0;
@@ -668,10 +677,18 @@ svg {
     display: none; }
     @media (min-width: 700px) {
       .nav__wrapper {
-        display: block; } }
+        display: block;
+        float: left;
+        max-width: 1000px;
+        margin-left: 25px; } }
   .nav__item {
+    -webkit-transition: color 0.25s ease-out;
+    -moz-transition: color 0.25s ease-out;
+    transition: color 0.25s ease-out;
+    font-family: "Source Sans Pro", sans-serif;
     color: #fff;
-    text-decoration: none; }
+    text-decoration: none;
+    text-transform: uppercase; }
     @media (max-width: 700px) {
       .nav__item {
         display: block;
@@ -753,11 +770,11 @@ svg {
  * Modifier: hero--modifier
  */
 .hero {
+  position: relative;
   float: left;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #222;
   text-align: center; }
   .hero__title, .hero__client, .hero__label, .hero__date {
     margin: 0; }
@@ -769,13 +786,17 @@ svg {
   .hero__label {
     font-size: 0.875rem; }
 
+.home .hero {
+  border-bottom: 2px solid #bbbbbb;
+  margin-bottom: 50px; }
+
 /**
  * Block: report
  * Element: report__element
  * Modifier: report--modifier
  */
 .report {
-  max-width: 750px;
+  max-width: 1000px;
   margin-top: 35px;
   margin-bottom: 35px;
   margin-left: auto;
@@ -785,12 +806,30 @@ svg {
       margin-top: 75px;
       margin-bottom: 75px; } }
   .report__title {
+    position: relative;
+    margin-bottom: 25px;
     font-size: 1.25rem;
     text-align: center;
     text-transform: uppercase; }
+    .report__title:before, .report__title:after {
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      background: #bbbbbb; }
     @media (min-width: 700px) {
       .report__title {
-        font-size: 1.75rem; } }
+        margin-bottom: 50px;
+        font-size: 1.875rem; } }
+    .report__title span {
+      position: relative;
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: #fff;
+      z-index: 10; }
   .report__subtitle {
     font-size: 1.5rem;
     font-weight: 600;
@@ -798,35 +837,50 @@ svg {
     .report__subtitle--small {
       font-size: 1.125rem; }
   .report__item {
-    margin-bottom: 25px; }
+    margin-bottom: 45px; }
+    @media (min-width: 700px) {
+      .report__item {
+        padding-right: 25px;
+        padding-left: 25px; } }
+    @media (min-width: 980px) {
+      .report__item {
+        padding-right: 35px;
+        padding-left: 35px; } }
   .report__header {
-    margin-bottom: 25px; }
+    margin-bottom: 15px; }
   .report__item-title {
     font-size: 1.375rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 5px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #363636; }
   .report__outlet-description p {
     margin-bottom: 10px; }
     .report__outlet-description p:last-child {
       margin-bottom: 0; }
   .report__status {
+    position: relative;
     display: inline-block;
-    font-size: 0.625rem;
-    text-transform: uppercase;
-    font-weight: 300;
+    top: -2px;
     padding: 3px 5px;
     border-radius: 5px;
-    vertical-align: text-bottom;
+    margin-left: 5px;
+    font-size: 0.625rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    vertical-align: middle;
     color: #222; }
     .report__status--new {
       background: #2ecc71;
       color: white; }
   .report__notes-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-top: 5px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600; }
   .report__stats, .report__social {
     margin-top: 10px;
     margin-bottom: 10px; }
@@ -846,6 +900,11 @@ svg {
     max-width: 25px;
     margin-right: 3px; }
 
+.notes p {
+  margin-bottom: 5px; }
+  .notes p:last-child {
+    margin-bottom: 0; }
+
 /**
  * Block: footer
  * Element: footer__element
@@ -856,7 +915,7 @@ svg {
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0.67em 0;
-  border-top: 1px solid #222; }
+  border-top: 2px solid #bbbbbb; }
   .footer .page-container {
     text-align: center; }
     @media (min-width: 700px) {
@@ -895,13 +954,26 @@ svg {
 
 .printfriendly {
   margin-top: 10px; }
+  @media (min-width: 700px) {
+    .printfriendly {
+      position: absolute;
+      top: 0;
+      right: 10px; } }
   .printfriendly a {
     display: inline-block;
     padding: 5px 8px;
-    background-color: gray;
-    color: white;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-family: "Source Sans Pro", sans-serif;
     text-decoration: none;
-    border-radius: 5px; }
+    text-transform: uppercase;
+    color: white;
+    background-color: #bbbbbb;
+    -webkit-transition: background-color 0.25s ease-out;
+    -moz-transition: background-color 0.25s ease-out;
+    transition: background-color 0.25s ease-out; }
+    .printfriendly a:hover {
+      background-color: #222; }
 
 /*-------------------------------------------- */
 /** Pages */
