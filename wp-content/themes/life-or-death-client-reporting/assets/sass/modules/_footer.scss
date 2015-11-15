@@ -12,6 +12,28 @@ $block: footer;
     margin: 0.67em 0;
 	border-top: 1px solid $color-black;
 
+
+	.page-container {
+		text-align: center;
+
+		@include respond-to('small and up') {
+			text-align: justify;
+
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		
+	}
+	&__group {
+
+		@include respond-to('small and up') {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 	.site-credit {
 		position: absolute;
 		left: 0;
@@ -23,5 +45,23 @@ $block: footer;
 		color: lighten($color-black, 25%);
 		text-transform: lowercase;
 		text-align: center;
+	}
+
+	&__logo {
+		
+		color: black;
+
+		svg {
+			display: inline-block;
+			margin: auto;
+			width: 43px;
+			height: 30px;
+			
+			@include respond-to('small and up') {
+				width: 57px;
+				height: 40px;
+			}
+		}
+
 	}
 }

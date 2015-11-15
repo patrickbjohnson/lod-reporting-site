@@ -857,6 +857,19 @@ svg {
   padding-bottom: 20px;
   margin: 0.67em 0;
   border-top: 1px solid #222; }
+  .footer .page-container {
+    text-align: center; }
+    @media (min-width: 700px) {
+      .footer .page-container {
+        text-align: justify; }
+        .footer .page-container:after {
+          content: '';
+          display: inline-block;
+          width: 100%; } }
+  @media (min-width: 700px) {
+    .footer__group {
+      display: inline-block;
+      vertical-align: middle; } }
   .footer .site-credit {
     position: absolute;
     left: 0;
@@ -868,6 +881,17 @@ svg {
     color: #626262;
     text-transform: lowercase;
     text-align: center; }
+  .footer__logo {
+    color: black; }
+    .footer__logo svg {
+      display: inline-block;
+      margin: auto;
+      width: 43px;
+      height: 30px; }
+      @media (min-width: 700px) {
+        .footer__logo svg {
+          width: 57px;
+          height: 40px; } }
 
 .printfriendly {
   margin-top: 10px; }
