@@ -12,7 +12,7 @@
  	if ( !isset( $report_status ) )  $report_status = '';
 ?>
 
-<div class="report__item" <?php echo $facebook ? 'data-facebook="' . $facebook . '"' : '' ; ?> <?php echo $twitter ? 'data-twitter="' . $twitter . '"' : '' ; ?>">
+<div class="report__item" <?php echo $facebook ? 'data-facebook="' . $facebook . '"' : '';?> <?php echo $twitter ? 'data-twitter="' . $twitter . '"' : '' ;?>>
 	<div class="report__header">
 		<h1 class="report__item-title">
 			<?php echo $name; ?> 
@@ -56,12 +56,13 @@
 				<p class=""><a href="<?php echo $links; ?>" target="_blank"><?php echo $links; ?></a>
 			</div>
 		<?php else : ?>
-			<div class="notes"
+			<div class="notes">
 				<h2 class="report__notes-title">Notes</h2>
 				<?php echo $notes; ?>
 				<p><a href="<?php echo $links; ?>" target="_blank"><?php echo $links; ?></a>
-			</div>		<?php endif;  ?>
-
+			</div>
+		<?php endif; ?>
 	<?php endif; ?>
 </div>
+
 

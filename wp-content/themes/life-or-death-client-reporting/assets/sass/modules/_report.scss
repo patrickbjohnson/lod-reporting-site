@@ -31,10 +31,14 @@ $block: report;
 		font-size: rem(24);
 		font-weight: 600;
 		text-transform: uppercase;
+
+		&--small {
+			font-size: rem(18);
+		}
 	}
 
 	&__item {
-		margin-bottom: 50px;
+		margin-bottom: 25px;
 	}
 	
 	&__header {

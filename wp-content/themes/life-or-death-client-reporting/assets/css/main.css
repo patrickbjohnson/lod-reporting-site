@@ -760,8 +760,10 @@ svg {
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase; }
+    .report__subtitle--small {
+      font-size: 1.125rem; }
   .report__item {
-    margin-bottom: 50px; }
+    margin-bottom: 25px; }
   .report__header {
     margin-bottom: 25px; }
   .report__item-title {

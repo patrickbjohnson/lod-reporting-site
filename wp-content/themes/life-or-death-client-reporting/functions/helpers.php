@@ -13,12 +13,12 @@
 function sort_repeater($variable) {
 	$field = get_field($variable);
 
+
 	if ( empty( $field ) ) return;
 
 	$order = array();
 
 	foreach ($field as $key => $value) {
-
 		$order[$key] = array(
 			'title'			=> $value['media_outlet']->post_title,
 			'notes'			=> $value['feature_notes'],
