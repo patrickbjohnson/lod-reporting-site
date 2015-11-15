@@ -492,9 +492,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_55fa3e1dd27bb",
-            "label": "Tour Press Pending",
-            "name": "tour_recap_pending",
+            "key": "field_564164d8fe03d",
+            "label": "Tour Recap",
+            "name": "tour_recap",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -507,35 +507,13 @@
             "min": "",
             "max": "",
             "layout": "row",
-            "button_label": "Add Row",
+            "button_label": "Add Market",
             "sub_fields": [
                 {
-                    "key": "field_55fa3e1dd27bc",
-                    "label": "Media Outlet",
-                    "name": "media_outlet",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "media_outlet"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_55fa3e1dd27bd",
-                    "label": "Feature Notes",
-                    "name": "feature_notes",
-                    "type": "wysiwyg",
+                    "key": "field_564164fafe03e",
+                    "label": "Tour Market",
+                    "name": "tour_market",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -545,99 +523,18 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
-                },
-                {
-                    "key": "field_55fa3e1dd27be",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_55fe1937f79e9",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
                     "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                }
-            ]
-        },
-        {
-            "key": "field_5635375a43eb5",
-            "label": "Tour Press Passed",
-            "name": "tour_recap_passed",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "layout": "row",
-            "button_label": "Add Row",
-            "sub_fields": [
-                {
-                    "key": "field_5635375a43eb6",
-                    "label": "Media Outlet",
-                    "name": "media_outlet",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "media_outlet"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
                 },
                 {
-                    "key": "field_5635375a43eb7",
-                    "label": "Feature Notes",
-                    "name": "feature_notes",
-                    "type": "wysiwyg",
+                    "key": "field_564169be9980d",
+                    "label": "Tour Date",
+                    "name": "tour_date",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -646,16 +543,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
+                    "display_format": "m\/d\/Y",
+                    "return_format": "m\/d\/Y",
+                    "first_day": 0
                 },
                 {
-                    "key": "field_5635375a43eb8",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
+                    "key": "field_56416506fe03f",
+                    "label": "Tour Report",
+                    "name": "tour_report",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -664,136 +560,121 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5635375a43eb9",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                }
-            ]
-        },
-        {
-            "key": "field_5635377043eba",
-            "label": "Tour Press Confirmed",
-            "name": "tour_recap_confirmed",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "layout": "row",
-            "button_label": "Add Row",
-            "sub_fields": [
-                {
-                    "key": "field_5635377043ebb",
-                    "label": "Media Outlet",
-                    "name": "media_outlet",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "media_outlet"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5635377043ebc",
-                    "label": "Feature Notes",
-                    "name": "feature_notes",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
-                },
-                {
-                    "key": "field_5635377043ebd",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5635377043ebe",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
+                    "min": "",
+                    "max": "",
+                    "layout": "block",
+                    "button_label": "Add Tour Location",
+                    "sub_fields": [
+                        {
+                            "key": "field_56416510fe040",
+                            "label": "Media Outlet",
+                            "name": "media_outlet",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "media_outlet"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_5641693fe14a9",
+                            "label": "Pitch Status",
+                            "name": "pitch_status",
+                            "type": "select",
+                            "instructions": "Selection should be either Pitched, Confirmed or Passed\r\n\r\n",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "pitched": "Pitched",
+                                "confirmed": "Confirmed",
+                                "passed": "Passed"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_56416547fe043",
+                            "label": "Report Status",
+                            "name": "report_status",
+                            "type": "select",
+                            "instructions": "Select New or Updated to display the status of this report item.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "new": "New",
+                                "update": "Update"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_56416524fe041",
+                            "label": "Notes",
+                            "name": "notes",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        },
+                        {
+                            "key": "field_56416537fe042",
+                            "label": "Links",
+                            "name": "links",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1135,5 +1016,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1446333749
+    "modified": 1447553933
 }
