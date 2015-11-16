@@ -37,7 +37,7 @@ function report() {
 		'has_archive'         => true,		
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'rewrite'			  => false,
+		'rewrite'			  => array('slug' => 'reports'),
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'report', $args );

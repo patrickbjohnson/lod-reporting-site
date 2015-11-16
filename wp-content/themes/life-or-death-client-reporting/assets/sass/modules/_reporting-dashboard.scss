@@ -1,0 +1,125 @@
+/**
+ * Block: reporting-dashboard
+ * Element: reporting-dashboard__element
+ * Modifier: reporting-dashboard--modifier
+ */
+
+$block: reporting-dashboard;
+.reporting-dashboard {
+	.page-container {
+		max-width: 1000px;
+	}
+}
+
+.report-card {
+	display: block;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid lighten($color-black, 75%);
+	text-decoration: none;
+	border-radius: 3px;
+	@include transition(border-color .250s ease-out);
+	@include transition(box-shadow .250s ease-out);
+
+	@include respond-to('small and up') {
+		padding-left: 25px;
+		padding-right: 25px;	
+
+		&:hover {
+			border-color: lighten($color-black, 70%);
+			box-shadow: 0 1px 1px rgba(0,0,0,.075),0 0 10px rgba($color-black, .2);
+		}	
+	}
+	
+	&__header {
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		@include respond-to('small and up') {
+			display: table;
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__body {
+		@include clearfix;
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+
+	&__header-group {
+		@include respond-to('small and up') {
+			display: table-cell;
+			vertical-align: middle;
+
+			&:last-child {
+				text-align: right;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-size: rem(20);
+		text-transform: uppercase;
+
+		@include respond-to('small and up') {
+			font-size: rem(28);
+		}
+	}
+
+	&__subtitle {
+		font-size: rem(18);
+	}
+
+	&__date,
+	&__label {
+		margin: 0;
+		@include respond-to('small and up') {
+			text-align: right;
+		}
+	}
+
+	&__quote {
+		@include respond-to('small and up') {
+			float: left;
+			width: 32%;
+			margin-right: 2%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			
+		}
+	}
+
+
+	blockquote {
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		@include respond-to('small and up') {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		footer {
+			margin-top: 5px;
+			font-family: $primary-font;
+			font-style: italic;
+
+			&:before {
+				content: '\2014 \00A0';
+			}
+		}
+	}
+}

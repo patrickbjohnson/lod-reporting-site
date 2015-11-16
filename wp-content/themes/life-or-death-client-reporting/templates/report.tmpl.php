@@ -24,36 +24,61 @@ $the_query = new WP_Query( $args );
 
 
 ?>
-<div class="hero">
-	<h1><?php echo get_user_meta($current_user->ID)['nickname'][0]; ?> Dashboard</h1>
-</div>
-<div class="page-container">
-	<?php if ( $the_query->have_posts() ) : ?>
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $report = new Report_View_Model( $post );?>
-			<a href="<?php the_permalink(); ?>"><?php echo $report->get_title(); ?></a>
-			<p>Date: <?php echo $report->report_date; ?></p>
-			<p>Overview: </p>
-			<?php if( have_rows('pull_quotes') ): ?>
-			    <?php while ( have_rows('pull_quotes') ) : the_row(); ?>
-					<blockquote>
-						<?php  
-							the_sub_field('quote_text');
-							
-						?>
-						<footer>
-							<cite><?php the_sub_field('quote_attribution');	 ?></cite>
-						</footer>
-					</blockquote>
-			    <?php endwhile; ?>
-			<?php endif; ?>
+<main class="reporting-dashboard">
+	<div class="hero">
+		<h1><?php echo get_user_meta($current_user->ID)['nickname'][0]; ?> Dashboard</h1>
+	</div>
 
-		<?php endwhile; wp_reset_postdata(); ?>
+	<div class="page-container">
+		<?php the_partial('report-section-title', array('title' => 'Reports')); ?>
+		<?php if ( $the_query->have_posts() ) : ?>
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); $report = new Report_View_Model( $post );?>
 
-	<?php else : ?>
-		<p><?php _e( 'Sorry, no reports just yet.' ); ?></p>
-	<?php endif; ?>
+				<a href="<?php echo $report->get_permalink();?>" class="report-card report__item">
+					<div class="report-card__header">
+						<div class="report-card__header-group">
+							<h2 class="report-card__title"><?php echo $report->get_title(); ?></h2>
+						</div>
+						<div class="report-card__header-group">
+							<p class="report-card__date"><?php echo $report->report_date; ?></p>
+							<?php if ( $report->label ) : ?>
+							<p class="report-card__label"><?php echo $report->label; ?></p>
+							<?php endif; ?>
+						</div>
+					</div>
+					
+					<?php if( have_rows('pull_quotes') ): ?>
+						<div class="report-card__body">
+						<h3 class="report-card__subtitle report__item-title">Report Quotes</h3>
+						    <?php while ( have_rows('pull_quotes') ) : the_row(); ?>
+						    	<div class="report-card__quote">
+						    		<blockquote>
+						    			<?php  
+						    				the_sub_field('quote_text');
+						    				
+						    			?>
+						    			<footer>
+						    				<cite><?php the_sub_field('quote_attribution');	 ?></cite>
+						    			</footer>
+						    		</blockquote>
+						    	</div>
+						    <?php endwhile; ?>
+						</div>
+					<?php endif; ?>
+					
+				</a>
+				
 
-</div>
+			<?php endwhile; wp_reset_postdata(); ?>
+
+		<?php else : ?>
+			<p><?php _e( 'Sorry, no reports just yet.' ); ?></p>
+		<?php endif; ?>
+
+	</div>
+</main>
+
+
 
 <?php get_footer(); ?>
 

@@ -786,10 +786,6 @@ svg {
   .hero__label {
     font-size: 0.875rem; }
 
-.home .hero {
-  border-bottom: 2px solid #bbbbbb;
-  margin-bottom: 50px; }
-
 /**
  * Block: report
  * Element: report__element
@@ -974,6 +970,96 @@ svg {
     transition: background-color 0.25s ease-out; }
     .printfriendly a:hover {
       background-color: #222; }
+
+/**
+ * Block: reporting-dashboard
+ * Element: reporting-dashboard__element
+ * Modifier: reporting-dashboard--modifier
+ */
+.reporting-dashboard .page-container {
+  max-width: 1000px; }
+
+.report-card {
+  display: block;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid #e1e1e1;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-transition: border-color 0.25s ease-out;
+  -moz-transition: border-color 0.25s ease-out;
+  transition: border-color 0.25s ease-out;
+  -webkit-transition: box-shadow 0.25s ease-out;
+  -moz-transition: box-shadow 0.25s ease-out;
+  transition: box-shadow 0.25s ease-out; }
+  @media (min-width: 700px) {
+    .report-card {
+      padding-left: 25px;
+      padding-right: 25px; }
+      .report-card:hover {
+        border-color: #d4d4d4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px rgba(34, 34, 34, 0.2); } }
+  .report-card__header {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .report-card__header {
+        display: table;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px; } }
+  .report-card__body {
+    margin-top: 25px;
+    margin-bottom: 15px; }
+    .report-card__body::after {
+      clear: both;
+      content: "";
+      display: table; }
+  @media (min-width: 700px) {
+    .report-card__header-group {
+      display: table-cell;
+      vertical-align: middle; }
+      .report-card__header-group:last-child {
+        text-align: right; }
+      .report-card__header-group p {
+        margin: 0; } }
+  .report-card__title {
+    margin: 0;
+    font-size: 1.25rem;
+    text-transform: uppercase; }
+    @media (min-width: 700px) {
+      .report-card__title {
+        font-size: 1.75rem; } }
+  .report-card__subtitle {
+    font-size: 1.125rem; }
+  .report-card__date, .report-card__label {
+    margin: 0; }
+    @media (min-width: 700px) {
+      .report-card__date, .report-card__label {
+        text-align: right; } }
+  @media (min-width: 700px) {
+    .report-card__quote {
+      float: left;
+      width: 32%;
+      margin-right: 2%; }
+      .report-card__quote:last-child {
+        margin-right: 0; } }
+  .report-card blockquote {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    @media (min-width: 700px) {
+      .report-card blockquote {
+        margin-top: 15px;
+        margin-bottom: 15px; } }
+    .report-card blockquote footer {
+      margin-top: 5px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-style: italic; }
+      .report-card blockquote footer:before {
+        content: '\2014 \00A0'; }
 
 /*-------------------------------------------- */
 /** Pages */
