@@ -1014,10 +1014,6 @@ svg {
   .report-card__body {
     margin-top: 25px;
     margin-bottom: 15px; }
-    .report-card__body::after {
-      clear: both;
-      content: "";
-      display: table; }
   @media (min-width: 700px) {
     .report-card__header-group {
       display: table-cell;
@@ -1040,13 +1036,6 @@ svg {
     @media (min-width: 700px) {
       .report-card__date, .report-card__label {
         text-align: right; } }
-  @media (min-width: 700px) {
-    .report-card__quote {
-      float: left;
-      width: 32%;
-      margin-right: 2%; }
-      .report-card__quote:last-child {
-        margin-right: 0; } }
   .report-card blockquote {
     margin-top: 20px;
     margin-bottom: 20px; }
@@ -1060,6 +1049,33 @@ svg {
       font-style: italic; }
       .report-card blockquote footer:before {
         content: '\2014 \00A0'; }
+
+.report-card__grid::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.report-card__grid-item {
+  float: left; }
+
+.report-card__grid-1-up .report-card__grid-item {
+  width: 100%; }
+
+.report-card__grid-2-up .report-card__grid-item {
+  width: 100%; }
+  @media (min-width: 700px) {
+    .report-card__grid-2-up .report-card__grid-item {
+      width: 48%;
+      margin-right: 2%; }
+      .report-card__grid-2-up .report-card__grid-item:last-child {
+        margin-right: 0; } }
+
+@media (min-width: 700px) {
+  .report-card__grid-3-up .report-card__grid-item {
+    width: 32%;
+    margin-right: 2%; }
+    .report-card__grid-3-up .report-card__grid-item:last-child {
+      margin-right: 0; } }
 
 /*-------------------------------------------- */
 /** Pages */

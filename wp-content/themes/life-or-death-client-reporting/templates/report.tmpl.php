@@ -24,9 +24,11 @@ $the_query = new WP_Query( $args );
 
 
 ?>
+
 <main class="reporting-dashboard">
 	<div class="hero">
-		<h1><?php echo get_user_meta($current_user->ID)['nickname'][0]; ?> Dashboard</h1>
+
+		<h1><?php echo get_userdata($current_user->ID)->data->display_name; ?>'s Dashboard</h1>
 	</div>
 
 	<div class="page-container">
@@ -48,10 +50,12 @@ $the_query = new WP_Query( $args );
 					</div>
 					
 					<?php if( have_rows('pull_quotes') ): ?>
-						<div class="report-card__body">
+
+						<?php ; ?>
+						<div class="report-card__body report-card__grid report-card__grid-<? echo count( get_field( 'pull_quotes' ) ); ?>-up">
 						<h3 class="report-card__subtitle report__item-title">Report Quotes</h3>
 						    <?php while ( have_rows('pull_quotes') ) : the_row(); ?>
-						    	<div class="report-card__quote">
+						    	<div class="report-card__quote report-card__grid-item">
 						    		<blockquote>
 						    			<?php  
 						    				the_sub_field('quote_text');

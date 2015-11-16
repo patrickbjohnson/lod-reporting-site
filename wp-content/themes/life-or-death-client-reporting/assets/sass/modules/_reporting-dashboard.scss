@@ -47,7 +47,6 @@ $block: reporting-dashboard;
 	}
 
 	&__body {
-		@include clearfix;
 		margin-top: 25px;
 		margin-bottom: 15px;
 	}
@@ -89,20 +88,6 @@ $block: reporting-dashboard;
 		}
 	}
 
-	&__quote {
-		@include respond-to('small and up') {
-			float: left;
-			width: 32%;
-			margin-right: 2%;
-
-			&:last-child {
-				margin-right: 0;
-			}
-			
-		}
-	}
-
-
 	blockquote {
 		margin-top: 20px;
 		margin-bottom: 20px;
@@ -119,6 +104,53 @@ $block: reporting-dashboard;
 
 			&:before {
 				content: '\2014 \00A0';
+			}
+		}
+	}
+}
+
+.report-card__grid {
+	@include clearfix;
+	// @include respond-to('small and up') {
+	// 	float: left;
+	// 	width: 32%;
+	// 	margin-right: 2%;
+
+	// 	&:last-child {
+	// 		margin-right: 0;
+	// 	}
+		
+	// }
+
+
+	&-item {
+		float: left;
+	}
+
+	&-1-up &-item {
+		width: 100%;
+	}
+
+	&-2-up &-item {
+		width: 100%; 
+
+		@include respond-to('small and up') {
+			width: 48%;
+			margin-right: 2%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&-3-up &-item {
+		@include respond-to('small and up') {
+			width: 32%;
+			margin-right: 2%;
+
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
