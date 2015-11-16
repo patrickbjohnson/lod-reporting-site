@@ -261,7 +261,7 @@
 	<?php if( $news_recap ): ?>
 		<div class="report" id="news">
 		<?php the_partial('report-section-title', 
-			array('title' => 'NEws')
+			array('title' => 'News')
 		); ?>
 		<?php foreach( $news_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
 			the_partial('report-section', array(
