@@ -24,7 +24,7 @@
             "name": "report_date",
             "type": "date_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -41,7 +41,7 @@
             "name": "report_client",
             "type": "user",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -629,7 +629,7 @@
                     "name": "tour_market",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -650,7 +650,7 @@
                     "name": "tour_venue",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -671,7 +671,7 @@
                     "name": "tour_date",
                     "type": "date_picker",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -706,7 +706,7 @@
                             "name": "media_outlet",
                             "type": "post_object",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -728,7 +728,7 @@
                             "name": "pitch_status",
                             "type": "select",
                             "instructions": "Selection should be either Pitched, Confirmed or Passed\r\n\r\n",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -1030,5 +1030,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1448144521
+    "modified": 1448148119
 }
