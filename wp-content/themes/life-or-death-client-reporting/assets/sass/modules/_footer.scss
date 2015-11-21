@@ -11,45 +11,44 @@ $block: footer;
 	padding-bottom: 20px;
     margin: 0.67em 0;
 	border-top: 2px solid lighten($color-black, 60%);
-
-
-	.page-container {
-		text-align: center;
-
-		@include respond-to('small and up') {
-			text-align: justify;
-
-			&:after {
-				content: '';
-				display: inline-block;
-				width: 100%;
-			}
-		}
-		
+	
+	@include respond-to('small and up') {
+		padding-bottom: 10px;
 	}
-	&__group {
 
-		@include respond-to('small and up') {
-			display: inline-block;
-			vertical-align: middle;
-		}
-	}
-	.site-credit {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 200px;
-		margin: auto;
-		font-size: rem(10);
-		color: lighten($color-black, 25%);
-		text-transform: lowercase;
-		text-align: center;
+	// .site-credit {
+	// 	position: absolute;
+	// 	left: 0;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	width: 200px;
+	// 	margin: auto;
+	// 	font-size: rem(10);
+	// 	color: lighten($color-black, 25%);
+	// 	text-transform: lowercase;
+	// 	text-align: center;
+	// }
+	// 
+	&__logo,
+	&__profile,
+	&__credit {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&__logo {
-		
+		width: 57px;
+		margin: auto;
 		color: black;
+
+		@include respond-to('small and up') {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
 
 		svg {
 			display: inline-block;
@@ -62,6 +61,30 @@ $block: footer;
 				height: 40px;
 			}
 		}
+	}
 
+	&__profile {
+		font-family: $primary-font;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-decoration: none;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		@include respond-to('small and up') {
+			float: left;
+		}
+	}
+
+	&__credit {
+		margin-top: 50px;
+		font-size: rem(10);
+		color: lighten($color-black, 60%);
+		text-transform: lowercase;
+
+		@include respond-to('small and up') {
+			float: right;
+			margin-top: 15px;
+		}
 	}
 }

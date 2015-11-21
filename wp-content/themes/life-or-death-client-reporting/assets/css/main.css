@@ -893,7 +893,8 @@ svg {
     position: relative;
     display: inline-block;
     top: 7px;
-    max-width: 25px;
+    width: 25px;
+    height: 25px;
     margin-right: 3px; }
 
 .notes p {
@@ -912,32 +913,24 @@ svg {
   padding-bottom: 20px;
   margin: 0.67em 0;
   border-top: 2px solid #bbbbbb; }
-  .footer .page-container {
-    text-align: center; }
-    @media (min-width: 700px) {
-      .footer .page-container {
-        text-align: justify; }
-        .footer .page-container:after {
-          content: '';
-          display: inline-block;
-          width: 100%; } }
   @media (min-width: 700px) {
-    .footer__group {
-      display: inline-block;
-      vertical-align: middle; } }
-  .footer .site-credit {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 200px;
-    margin: auto;
-    font-size: 0.625rem;
-    color: #626262;
-    text-transform: lowercase;
-    text-align: center; }
+    .footer {
+      padding-bottom: 10px; } }
+  .footer__logo, .footer__profile, .footer__credit {
+    display: table;
+    margin-left: auto;
+    margin-right: auto; }
   .footer__logo {
+    width: 57px;
+    margin: auto;
     color: black; }
+    @media (min-width: 700px) {
+      .footer__logo {
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: auto; } }
     .footer__logo svg {
       display: inline-block;
       margin: auto;
@@ -947,6 +940,25 @@ svg {
         .footer__logo svg {
           width: 57px;
           height: 40px; } }
+  .footer__profile {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    @media (min-width: 700px) {
+      .footer__profile {
+        float: left; } }
+  .footer__credit {
+    margin-top: 50px;
+    font-size: 0.625rem;
+    color: #bbbbbb;
+    text-transform: lowercase; }
+    @media (min-width: 700px) {
+      .footer__credit {
+        float: right;
+        margin-top: 15px; } }
 
 .printfriendly {
   margin-top: 10px; }

@@ -138,6 +138,123 @@
             ]
         },
         {
+            "key": "field_56259bb9e65a2",
+            "label": "TV \/ Radio",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56259bc4e65a3",
+            "label": "TV \/ Radio Recap",
+            "name": "tv_radio_recap",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "row",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_56259bc4e65a7",
+                    "label": "Report Status",
+                    "name": "report_status",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "New": "New"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_56259bc4e65a4",
+                    "label": "Media Outlet",
+                    "name": "media_outlet",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "media_outlet"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_56259bc4e65a5",
+                    "label": "Feature Notes",
+                    "name": "feature_notes",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1
+                },
+                {
+                    "key": "field_56259bc4e65a6",
+                    "label": "Feature Links",
+                    "name": "feature_links",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_55fa3b7eae58e",
             "label": "Features",
             "name": "",
@@ -185,11 +302,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
+                        "New": "New"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
                     "ajax": 0,
@@ -303,11 +419,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
+                        "New": "New"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
                     "ajax": 0,
@@ -408,6 +523,31 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
+                    "key": "field_55fe1921f79e8",
+                    "label": "Report Status",
+                    "name": "report_status",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "New": "New"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
                     "key": "field_55fa3e4f92629",
                     "label": "Media Outlet",
                     "name": "media_outlet",
@@ -446,32 +586,6 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1
-                },
-                {
-                    "key": "field_55fe1921f79e8",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
                 }
             ]
         },
@@ -513,6 +627,27 @@
                     "key": "field_564164fafe03e",
                     "label": "Tour Market",
                     "name": "tour_market",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5650ebed88a07",
+                    "label": "Tour Venue",
+                    "name": "tour_venue",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -619,7 +754,7 @@
                             "label": "Report Status",
                             "name": "report_status",
                             "type": "select",
-                            "instructions": "Select New or Updated to display the status of this report item.",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -628,11 +763,10 @@
                                 "id": ""
                             },
                             "choices": {
-                                "new": "New",
-                                "update": "Update"
+                                "New": "New"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "ajax": 0,
@@ -713,6 +847,31 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
+                    "key": "field_55fe1949f79ea",
+                    "label": "Report Status",
+                    "name": "report_status",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "New": "New"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
                     "key": "field_55fa3e6e9262e",
                     "label": "Media Outlet",
                     "name": "media_outlet",
@@ -751,32 +910,6 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1
-                },
-                {
-                    "key": "field_55fe1949f79ea",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
                 }
             ]
         },
@@ -815,6 +948,31 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
+                    "key": "field_55fe195af79eb",
+                    "label": "Report Status",
+                    "name": "report_status",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "New": "New"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
                     "key": "field_55fa3e9d0a7fa",
                     "label": "Media Outlet",
                     "name": "media_outlet",
@@ -851,150 +1009,6 @@
                     },
                     "default_value": "",
                     "placeholder": ""
-                },
-                {
-                    "key": "field_55fe195af79eb",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                }
-            ]
-        },
-        {
-            "key": "field_56259bb9e65a2",
-            "label": "TV \/ Radio",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_56259bc4e65a3",
-            "label": "TV \/ Radio Recap",
-            "name": "tv_radio_recap",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "layout": "row",
-            "button_label": "Add Row",
-            "sub_fields": [
-                {
-                    "key": "field_56259bc4e65a4",
-                    "label": "Media Outlet",
-                    "name": "media_outlet",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "media_outlet"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_56259bc4e65a5",
-                    "label": "Feature Notes",
-                    "name": "feature_notes",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
-                },
-                {
-                    "key": "field_56259bc4e65a6",
-                    "label": "Feature Links",
-                    "name": "feature_links",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_56259bc4e65a7",
-                    "label": "Report Status",
-                    "name": "report_status",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "New": "New",
-                        "Updated": "Updated"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
                 }
             ]
         }
@@ -1016,5 +1030,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1447555259
+    "modified": 1448144521
 }

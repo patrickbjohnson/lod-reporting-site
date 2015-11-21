@@ -53,7 +53,7 @@ $the_query = new WP_Query( $args );
 
 						<?php ; ?>
 						<div class="report-card__body report-card__grid report-card__grid-<? echo count( get_field( 'pull_quotes' ) ); ?>-up">
-						<h3 class="report-card__subtitle report__item-title">Report Quotes</h3>
+						<h3 class="report-card__subtitle report__item-title">Select Press Quotes</h3>
 						    <?php while ( have_rows('pull_quotes') ) : the_row(); ?>
 						    	<div class="report-card__quote report-card__grid-item">
 						    		<blockquote>

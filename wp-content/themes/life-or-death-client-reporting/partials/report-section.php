@@ -16,8 +16,9 @@
 	<div class="report__header">
 		<h1 class="report__item-title">
 			<?php echo $name; ?> 
+
 			<?php if ( $report_status ) : ?>
-				<span class="report__status <?php echo $report_status === 'New' ? 'report__status--new' : '' ;?>" ><?php echo $report_status; ?></span>
+				<span class="report__status report__status--new"><?php echo $report_status; ?></span>
 			<?php endif; ?>
 		</h1>
 		<?php if ($outlet_description) : ?>

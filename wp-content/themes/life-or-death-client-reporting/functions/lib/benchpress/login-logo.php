@@ -16,7 +16,6 @@ function bp_login_logo($logo_path, $dims) {
                 background-size: 100%;
                 width: <?php echo $dims['width']; ?>;
                 height: <?php echo $dims['height']; ?>;
-                padding-bottom: 30px;
             }
         </style>
     <?php });

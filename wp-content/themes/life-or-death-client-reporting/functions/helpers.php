@@ -139,29 +139,6 @@ function send_email_on_post_save( $post_id ) {
 		// // Send email to admin.
 		wp_mail( $user_email, $subject, $message, $headers );
 
-
-
-
-		// FIRST INSTANCE
-		// Admin creates report, assigns client. Hits publish
-
-		// SECOND INSTANCE
-		// Admin creates report. Doesn't assign client. Hits publish/update/save draft
-
-
-		//THIRD INSTANCE
-		// Admin creates report. Assigns incorrect client. publishes. 
-		// Then admin re-assigns client then updates. 
-		// if revision, and client object changes. resend the report.
-
-
-		// sent email at 11:26
-
-		//setn emial at 11:46
-
-		//QUESTION: What needs to be in place in order for Admin to send 
-		// the report? 
-		// How can we safe gaurd them from sending emails to early?
 }
 
 add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );

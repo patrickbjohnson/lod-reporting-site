@@ -138,6 +138,8 @@ $block: report;
 		li {
 			margin-right: 10px;
 			font-size: rem(14);
+
+
 		}
 	}
 
@@ -155,7 +157,8 @@ $block: report;
 			position: relative;
 			display: inline-block;
 			top: 7px;
-			max-width: 25px;
+			width: 25px;
+			height: 25px;
 			margin-right: 3px;
 		}
 	}

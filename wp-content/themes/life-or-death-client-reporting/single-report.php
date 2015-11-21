@@ -18,12 +18,6 @@
 	$tv_radio_recap = sort_repeater('tv_radio_recap');
 	$reviews_recap = sort_repeater('reviews_recap');
 
-
-	// $dompdf = new DOMPDF();
-	// $html = "<h1>hello this is some html";
-	// $dompdf->load_html($html);
-	// $dompdf->render();
-
 	get_header();
 ?>
 
@@ -49,6 +43,30 @@
 		</div>
 	</div>
 	<div class="page-container"> 
+	
+	<?php if( $tv_radio_recap ): ?>
+		<div class="report" id="radio">
+		<?php the_partial('report-section-title', 
+			array('title' => 'TV / Radio')
+		); ?>
+		<?php foreach( $tv_radio_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
+			the_partial('report-section', array(
+				'name'	=> $row['post']->post_title,
+				'outlet_type' => $media_outlet->outlet_type,
+				'outlet_description' => $media_outlet->outlet_description,
+				'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
+				'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
+				'notes' => $row['notes'],
+				'links' => $row['links'],
+				'facebook' => $media_outlet->facebook_account,
+				'twitter' => $media_outlet->twitter_account,
+				'report_status' => $row['status']
+			));
+			endforeach; 
+		?>
+		</div>
+	<?php endif; ?>
+
 	<?php if( $features_recap ): ?>
 		<div class="report" id="features">
 
@@ -102,13 +120,14 @@
 
 		<div class="report" id="tours">
 			<?php the_partial('report-section-title', 
-				array('title' => 'Tours')
+				array('title' => 'Tour Press')
 			); ?>
 		    <?php while ( have_rows('tour_recap') ) : the_row(); 
 				$tour_report = get_sub_field('tour_report');
 
 				$market_report = array(
 					'name' => get_sub_field('tour_market'),
+					'venue' => get_sub_field('tour_venue'),
 					'date' => get_sub_field('tour_date'),
 					'markets' => array(
 						'confirmed' => array(),
@@ -131,12 +150,13 @@
 				foreach ($market_report['markets'] as $key => $value) {
 					array_multisort( $market_report['markets'][$key], SORT_ASC );	
 				}; 
+
 			?>
 
 			<?php if ( $market_report['markets']['confirmed'] || $market_report['markets']['pitched'] || $market_report['markets']['passed']): ?>
 				<div class="report__sub-group">
 					<h1 class="report__subtitle">
-					<?php echo $market_report['date'];?> - <?php echo $market_report['name']; ?></h1>
+					<?php echo $market_report['date'];?> - <?php echo $market_report['venue']; ?> - <?php echo $market_report['name']; ?></h1>
 					<div class="report__tour-group">
 						<?php if ($market_report['markets']['confirmed']): ?>
 							<h2 class="report__subtitle report__subtitle--small">Confirmed</h2>
@@ -151,7 +171,7 @@
 									'links' => $row['links'],
 									'facebook' => $media_outlet->facebook_account,
 									'twitter' => $media_outlet->twitter_account,
-									'report_status' => $row['status']
+									'report_status' => $row['report_status']
 								));
 								endforeach; 
 							?>
@@ -172,7 +192,7 @@
 									'links' => $row['links'],
 									'facebook' => $media_outlet->facebook_account,
 									'twitter' => $media_outlet->twitter_account,
-									'report_status' => $row['status']
+									'report_status' => $row['report_status']
 								));
 								endforeach; 
 							?>
@@ -193,7 +213,7 @@
 									'links' => $row['links'],
 									'facebook' => $media_outlet->facebook_account,
 									'twitter' => $media_outlet->twitter_account,
-									'report_status' => $row['status']
+									'report_status' => $row['report_status']
 								));
 								endforeach; 
 							?>
@@ -206,7 +226,6 @@
 				
 		    <?php endwhile; ?>
 			</div>
-
 	<?php endif; ?>
 
 
@@ -277,28 +296,7 @@
 	<?php endif; ?>
 
 
-	<?php if( $tv_radio_recap ): ?>
-		<div class="report" id="radio">
-		<?php the_partial('report-section-title', 
-			array('title' => 'TV / Radio')
-		); ?>
-		<?php foreach( $tv_radio_recap as $i => $row ) : $media_outlet = new Report_View_Model ( $row['post'] ); 
-			the_partial('report-section', array(
-				'name'	=> $row['post']->post_title,
-				'outlet_type' => $media_outlet->outlet_type,
-				'outlet_description' => $media_outlet->outlet_description,
-				'outlet_circulation' => $media_outlet->set_number_format($media_outlet->outlet_circulation),
-				'outlet_site_visits' => $media_outlet->set_number_format($media_outlet->outlet_website_visits),
-				'notes' => $row['notes'],
-				'links' => $row['links'],
-				'facebook' => $media_outlet->facebook_account,
-				'twitter' => $media_outlet->twitter_account,
-				'report_status' => $row['status']
-			));
-			endforeach; 
-		?>
-		</div>
-	<?php endif; ?>
+
 
 
 	
