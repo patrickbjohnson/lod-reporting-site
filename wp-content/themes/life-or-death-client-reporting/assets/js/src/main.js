@@ -5,6 +5,8 @@ var ComponentRegistry = require('./lib/componentRegistry');
 /*-------------------------------------------- */
 
 var componentRegistry = new ComponentRegistry();
+var svg4everybody = require('svg4everybody');
+svg4everybody();
 
 /*
     data-js-component="moduleName" goes on your module's markup

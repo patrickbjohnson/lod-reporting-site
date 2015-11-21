@@ -9,13 +9,15 @@ webpackJsonp([0],[
 	/*-------------------------------------------- */
 	
 	var componentRegistry = new ComponentRegistry();
+	var svg4everybody = __webpack_require__(3);
+	svg4everybody();
 	
 	/*
 	    data-js-component="moduleName" goes on your module's markup
 	    componentRegistry.registerComponent('moduleName', require('./modules/moduleName'));
 	*/
 	
-	componentRegistry.registerComponent('nav', __webpack_require__(3));
+	componentRegistry.registerComponent('nav', __webpack_require__(4));
 	
 	
 	componentRegistry.initComponents();
@@ -70,13 +72,20 @@ webpackJsonp([0],[
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(a,b){true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function(){return a.svg4everybody=b()}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):"object"==typeof exports?module.exports=b():a.svg4everybody=b()}(this,function(){/*! svg4everybody v2.0.0 | github.com/jonathantneal/svg4everybody */
+	function a(a,b){if(b){var c=!a.getAttribute("viewBox")&&b.getAttribute("viewBox"),d=document.createDocumentFragment(),e=b.cloneNode(!0);for(c&&a.setAttribute("viewBox",c);e.childNodes.length;)d.appendChild(e.firstChild);a.appendChild(d)}}function b(b){b.onreadystatechange=function(){if(4===b.readyState){var c=document.createElement("x");c.innerHTML=b.responseText,b.s.splice(0).map(function(b){a(b[0],c.querySelector("#"+b[1].replace(/(\W)/g,"\\$1")))})}},b.onreadystatechange()}function c(c){function d(){for(var c;c=f[0];){var l=c.parentNode;if(l&&/svg/i.test(l.nodeName)){var m=c.getAttribute("xlink:href");if(e){var n=new Image,o=l.getAttribute("width"),p=l.getAttribute("height");n.src=g(m,l,c),o&&n.setAttribute("width",o),p&&n.setAttribute("height",p),l.replaceChild(n,c)}else if(h&&(!i||i(m,l,c))){var q=m.split("#"),r=q[0],s=q[1];if(l.removeChild(c),r.length){var t=k[r]=k[r]||new XMLHttpRequest;t.s||(t.s=[],t.open("GET",r),t.send()),t.s.push([l,s]),b(t)}else a(l,document.getElementById(s))}}}j(d,17)}c=c||{};var e,f=document.getElementsByTagName("use"),g=c.fallback||function(a){return a.replace(/\?[^#]+/,"").replace("#",".").replace(/^\./,"")+".png"+(/\?[^#]+/.exec(a)||[""])[0]};e="nosvg"in c?c.nosvg:/\bMSIE [1-8]\b/.test(navigator.userAgent),e&&(document.createElement("svg"),document.createElement("use"));var h="polyfill"in c?c.polyfill:e||/\bEdge\/12\b|\bMSIE [1-8]\b|\bTrident\/[567]\b|\bVersion\/7.0 Safari\b/.test(navigator.userAgent)||(navigator.userAgent.match(/AppleWebKit\/(\d+)/)||[])[1]<537,i=c.validate,j=window.requestAnimationFrame||setTimeout,k={};h&&d()}return c});
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// 'use strict';
 	
 	// /*-------------------------------------------- */
 	// /** Requires */
 	// /*-------------------------------------------- */
 	
-	var $ = __webpack_require__(4);
+	var $ = __webpack_require__(5);
 	
 	
 	// -------------------------------------------- 
@@ -126,7 +135,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
