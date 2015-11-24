@@ -5,8 +5,9 @@
 	// check if current user matches the report user
 	// or if the current user is an admin
 	// if not, send them back to their admin page
+
 	if ($current_user->ID != $report->report_client['ID'] && !current_user_can('manage_options')) {
-		wp_redirect( site_url() . '/wp-admin' );
+		auth_redirect();
 	}
 	
 	// Get all report content
@@ -27,9 +28,11 @@
 	<div class="hero">
 		<div class="page-container">
 			<div class="client-mantle">
-				<div class="client-mantle__img-wrap">
-					<img class="" src="<?php echo get_field( 'client_image', 'user_' . $report->report_client['ID'] )['url']; ?>" alt="">
-				</div>
+				<?php if (get_field('client_image', $report->report_client['ID'])): ?>
+					<div class="client-mantle__img-wrap">
+						<img class="" src="<?php echo get_field( 'client_image', 'user_' . $report->report_client['ID'] )['url']; ?>" alt="">
+					</div>
+				<?php endif ?>
 				<div class="client-mantle__info">
 					<h2 class="hero__client"><?php echo $report->report_client['display_name']; ?></h2>
 					<h1 class="hero__title"><?php echo $report->get_title(); ?></h1>
