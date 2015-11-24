@@ -1,0 +1,77 @@
+/**
+ * Block: footer
+ * Element: footer__element
+ * Modifier: footer--modifier
+ */
+
+$block: footer;
+.footer {
+	position: relative;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    margin: 0.67em 0;
+	border-top: 2px solid lighten($color-black, 60%);
+	
+	@include respond-to('small and up') {
+		padding-bottom: 10px;
+	}
+
+	&__logo,
+	&__profile,
+	&__credit {
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__logo {
+		width: 57px;
+		margin: auto;
+		color: black;
+
+		@include respond-to('small and up') {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+
+		svg {
+			display: inline-block;
+			margin: auto;
+			width: 43px;
+			height: 30px;
+			
+			@include respond-to('small and up') {
+				width: 57px;
+				height: 40px;
+			}
+		}
+	}
+
+	&__profile {
+		font-family: $primary-font;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-decoration: none;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		@include respond-to('small and up') {
+			float: left;
+		}
+	}
+
+	&__credit {
+		margin-top: 50px;
+		font-size: rem(10);
+		color: lighten($color-black, 60%);
+		text-transform: lowercase;
+
+		@include respond-to('small and up') {
+			float: right;
+			margin-top: 15px;
+		}
+	}
+}

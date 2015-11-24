@@ -34,7 +34,8 @@
             "choices": {
                 "Print": "Print",
                 "Digital": "Digital",
-                "Print & Digital": "Print & Digital"
+                "Print & Digital": "Print & Digital",
+                "TV \/ Radio": "TV \/ Radio"
             },
             "default_value": [],
             "allow_null": 0,
@@ -44,6 +45,27 @@
             "placeholder": "",
             "disabled": 0,
             "readonly": 0
+        },
+        {
+            "key": "field_55f8f59bfcb1f",
+            "label": "Outlet Description",
+            "name": "outlet_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_55f8f583fcb1d",
@@ -85,10 +107,10 @@
             "placeholder": ""
         },
         {
-            "key": "field_55f8f59bfcb1f",
-            "label": "Outlet Description",
-            "name": "outlet_description",
-            "type": "textarea",
+            "key": "field_55fdf868421e1",
+            "label": "Outlet Website Visits",
+            "name": "outlet_website_visits",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -99,9 +121,11 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -123,9 +147,9 @@
         },
         {
             "key": "field_55f8f5befcb21",
-            "label": "Social Accounts",
-            "name": "social_accounts",
-            "type": "repeater",
+            "label": "Facebook Account",
+            "name": "facebook_account",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -134,60 +158,34 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
-            "layout": "row",
-            "button_label": "Add Account",
-            "sub_fields": [
-                {
-                    "key": "field_55f8f5cefcb22",
-                    "label": "Social Account Type",
-                    "name": "social_account_type",
-                    "type": "select",
-                    "instructions": "Choose a social account",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Facebook": "Facebook",
-                        "Twitter": "Twitter",
-                        "Instagram": "Instagram"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                },
-                {
-                    "key": "field_55f8f5f2fcb23",
-                    "label": "Social Account Name",
-                    "name": "social_account_name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fdf73428733",
+            "label": "Twitter Account",
+            "name": "twitter_account",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -207,5 +205,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1442379349
+    "modified": 1445305335
 }

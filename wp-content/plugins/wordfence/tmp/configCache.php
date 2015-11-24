@@ -1,0 +1,4 @@
+<?php
+/* Wordfence temporary file security header */
+echo "Nothing to see here!\n"; exit(0);
+?>a:15:{s:9:"cacheType";s:0:"";s:9:"howGetIPs";s:0:"";s:6:"apiKey";s:160:"e9b96178da107fc90816187a0809f6994deabf20e1ea5f67905c6a15a61b7eef6bd67e46ba6173f8a1ddae810326c1d133d4b52850cfae6abbd2280e9d4f809df40d2d10df9b06388b3163f024f963c6";s:20:"loginSec_lockoutMins";s:3:"240";s:19:"other_hideWPVersion";s:1:"1";s:15:"firewallEnabled";s:1:"1";s:18:"liveTrafficEnabled";s:1:"1";s:14:"disableCookies";s:1:"0";s:17:"actUpdateInterval";s:0:"";s:7:"debugOn";s:1:"0";s:10:"tourClosed";s:1:"1";s:13:"welcomeClosed";s:1:"1";s:10:"autoUpdate";s:1:"1";s:11:"alertEmails";s:9:"im@pbj.me";s:26:"loginSec_disableAuthorScan";s:1:"1";}

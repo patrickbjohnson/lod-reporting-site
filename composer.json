@@ -1,14 +1,15 @@
 {
-	"name": "expandtheroom/etr-wordpress-2",
+	"name": "progresslabs/lod-reporting-site",
     "version": "2.0",
-	"description": "The second incarnation of ETR's base Wordpress install.",
+	"description": "Life or Death PR Reporting Site",
     "authors": [
         {
-            "name": "Greg Gilbert",
-            "email": "greg@expandtheroom.com"
+            "name": "Patrick Johnson",
+            "email": "hi@progresslabs.co"
         }
     ],
     "require": {
-		"vlucas/phpdotenv": "~1.0"
+		"vlucas/phpdotenv": "~1.0",
+        "j7mbo/twitter-api-php": "dev-master"
 	}
 }

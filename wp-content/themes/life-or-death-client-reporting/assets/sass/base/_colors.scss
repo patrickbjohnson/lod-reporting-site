@@ -1,0 +1,29 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * COLORS
+ * 
+ * Define any global color variables below. Ideally color variables should be
+ * referenced by the theme variables that follow. 
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+ 
+
+ /*-------------------------------------------- */
+ /** Color Variables */
+ /*-------------------------------------------- */
+
+$color-light-red: #f20000;
+$color-light-pink: lighten(pink, 10%);
+$color-black: #222;
+$color-white: #fff;
+$color-light-green: #2ecc71;
+
+
+ /*-------------------------------------------- */
+ /** Theme Variables */
+ /*-------------------------------------------- */
+
+ $brand-primary: $color-light-red;
+ $brand-secondary: $color-light-pink;
