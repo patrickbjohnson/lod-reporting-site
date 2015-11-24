@@ -1,6 +1,6 @@
     <footer class="footer">
         <div class="page-container">
-            <a href="#" class="footer__logo" target="_blank">
+            <a href="http://lifeordeath.co" class="footer__logo" target="_blank">
                 <svg role="img" title="CodePen" viewBox="0 0 184 129">
                     <use xlink:href="<?php BPAssetHelper::the_image('svgsprite.svg');?>#lod-logo"/>
                 </svg>

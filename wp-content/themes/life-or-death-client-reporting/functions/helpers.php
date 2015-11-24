@@ -104,42 +104,38 @@ function report_email_set_content_type(){
 }
 add_filter( 'wp_mail_content_type','report_email_set_content_type' );
 
-function send_email_on_post_save( $post_id ) {
-		
-		if (get_post_type( $post_id ) != 'report') return;
+function on_all_status_transitions( $new_status, $old_status, $post ) {
+	if (get_post_type( $post_id ) != 'report') return;
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    $subject = '';
+    
+    $post_title = get_the_title( $post_id );
+    
+    $post_url = get_permalink( $post_id );
+    
+    $user_id = $_POST['acf']['field_55fa3ddba01bd'];
+    $user_data = get_userdata( $user_id );
+    $user_email = $user_data->user_email;
+    $user_display_name = $user_data->display_name;
 
-		$post_status = get_post($post_id)->post_status;
-		if ($post_status != 'publish') return;
-		
-		// If this is just a revision, don't send the email.
-		if ( wp_is_post_revision( $post_id ) ) return;
+    $headers = 'From: Test Email <im@pbj.me>' . "\r\n";
+    $message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
+    
+    if ( $old_status != 'publish'  &&  $new_status == 'publish' ) {
+        $subject = 'Your Life or Death PR Report is Ready!';
+    	$message .= "Your new report has been published and is ready to be viewed\n\n";
+    	$message .= "Check it out <a href='" . $post_url . "'>here</a>";
+    	wp_mail( $user_email, $subject, $message, $headers );    
+    } 
 
-
-		$post_title = get_the_title( $post_id );
-		$post_url = get_permalink( $post_id );
-		$subject = 'User Email post test';
-
-		
-		$user_id = $_POST['acf']['field_55fa3ddba01bd'];
-		$user_data = get_userdata( $user_id);
-
-		$user_email = $user_data->user_email;
-		$user_display_name = $user_data->display_name;
-
-
-		$message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
-		$message .= "Your report is ready for viewing\n\n";
-		$message .= "Check it out <a href='" . $post_url . "'>here</a>";
-
-		
-		$headers = 'From: Test Email <im@pbj.me>' . "\r\n";
-
-		// // Send email to admin.
-		wp_mail( $user_email, $subject, $message, $headers );
-
+    if ($old_status == 'publish' && $new_status == 'publish') {
+    	$subject = 'Your Life or Death PR Report has been updated!';
+    	$message .= "Your report has been updated!\n\n";
+    	$message .= "Check it out <a href='" . $post_url . "'>here</a>";
+    	wp_mail( $user_email, $subject, $message, $headers );    
+    }
 }
+add_action(  'transition_post_status',  'on_all_status_transitions', 10, 3 );
 
-add_action( 'save_post_report', 'send_email_on_post_save', 10, 1 );
 
