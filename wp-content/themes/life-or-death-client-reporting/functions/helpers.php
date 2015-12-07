@@ -144,7 +144,7 @@ function remove_admin_menus () {
 	global $menu;
 
 	// all users
-	$restrict = explode(',', 'Links,Comments,Plugins,Tools,Settings,Appearance,Posts,Pages,Advanced Custom Fields');
+	$restrict = explode(',', 'Links,Comments,Tools,Settings,Appearance,Posts,Pages,Advanced Custom Fields');
 	
 	// non-administrator users
 	$restrict_user = explode(',', 'Media,Profile,Appearance,Plugins,Users,Tools,Settings');
