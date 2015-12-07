@@ -17,7 +17,8 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 files: [
-                    {src: 'assets/sass/main.scss', dest: 'assets/css/main.css'}
+                    {src: 'assets/sass/main.scss', dest: 'assets/css/main.css'},
+                    {src: 'assets/sass/print.scss', dest: 'assets/css/print.css'}
                 ],
                 options: {
                     sourceMap: true
@@ -26,7 +27,8 @@ module.exports = function(grunt) {
 
             prod: {
                 files: [
-                    {src: 'assets/sass/main.scss', dest: 'assets/css/main.min.css'}
+                    {src: 'assets/sass/main.scss', dest: 'assets/css/main.min.css'},
+                    {src: 'assets/sass/print.scss', dest: 'assets/css/print.css'}
                 ],
                 options: {
                     outputStyle: 'compressed'
