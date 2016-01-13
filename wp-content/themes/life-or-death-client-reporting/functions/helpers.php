@@ -42,6 +42,7 @@ function disable_wp_admin_bar() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 	    show_admin_bar( false );
 	}
+
 	?>
 	<style>
 		html { margin-top: 0 !important; }
@@ -120,22 +121,53 @@ function on_all_status_transitions( $new_status, $old_status, $post ) {
     $user_display_name = $user_data->display_name;
 
     $headers = 'From: Test Email <im@pbj.me>' . "\r\n";
+    $subject = "Your Life or Death PR Report";
     $message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
     
     if ( $old_status != 'publish'  &&  $new_status == 'publish' ) {
-        $subject = 'Your Life or Death PR Report is Ready!';
-    	$message .= "Your new report has been published and is ready to be viewed\n\n";
-    	$message .= "Check it out <a href='" . $post_url . "'>here</a>";
+    	$message .= "<p>Your Life or Death press report has been published and is available to view and download. Please direct any questions to your respective publicist.</p>";
+    	$message .= "<p>View your report <a href='" . $post_url . "'>here</a></p>";
     	wp_mail( $user_email, $subject, $message, $headers );    
     } 
 
     if ($old_status == 'publish' && $new_status == 'publish') {
-    	$subject = 'Your Life or Death PR Report has been updated!';
-    	$message .= "Your report has been updated!\n\n";
-    	$message .= "Check it out <a href='" . $post_url . "'>here</a>";
+    	$message .= "<p>Your Life or Death press report has been updated and is available to view and download. Please direct any questions to your respective publicist.</p>";
+    	$message .= "<p>View your report <a href='" . $post_url . "'>here</a></p>";
     	wp_mail( $user_email, $subject, $message, $headers );    
     }
+
 }
 add_action(  'transition_post_status',  'on_all_status_transitions', 10, 3 );
 
+
+// remove unnecessary menus
+function remove_admin_menus () {
+	global $menu;
+
+	// all users
+	$restrict = explode(',', 'Links,Comments,Appearance,Posts,Pages,Advanced Custom Fields');
+	
+	// non-administrator users
+	$restrict_user = explode(',', 'Media,Profile,Appearance,Plugins,Users,Tools,Settings');
+
+	// WP localization
+	$f = create_function('$v,$i', 'return __($v);');
+	array_walk($restrict, $f);
+	if (!current_user_can('activate_plugins')) {
+		array_walk($restrict_user, $f);
+		$restrict = array_merge($restrict, $restrict_user);
+	}
+
+	// remove menus
+	end($menu);
+	while (prev($menu)) {
+		$k = key($menu);
+		$v = explode(' ', $menu[$k][0]);
+		if(in_array(is_null($v[0]) ? '' : $v[0] , $restrict)) unset($menu[$k]);
+	}
+
+}
+add_action('admin_menu', 'remove_admin_menus');
+
+add_filter('acf/settings/show_admin', '__return_false');
 
