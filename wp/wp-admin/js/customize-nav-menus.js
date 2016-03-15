@@ -1132,11 +1132,15 @@
 					}
 				});
 				if ( settingValue ) {
+<<<<<<< HEAD
 					if ( ( property === 'classes' || property === 'xfn' ) && _.isArray( settingValue[ property ] ) ) {
 						element.set( settingValue[ property ].join( ' ' ) );
 					} else {
 						element.set( settingValue[ property ] );
 					}
+=======
+					element.set( settingValue[ property ] );
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 				}
 			});
 
@@ -1871,9 +1875,12 @@
 
 					control.isSorting = false;
 
+<<<<<<< HEAD
 					// Reset horizontal scroll position when done dragging.
 					control.$sectionContent.scrollLeft( 0 );
 
+=======
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 					_.each( menuItemContainerIds, function( menuItemContainerId ) {
 						var menuItemId, menuItemControl, matches;
 						matches = menuItemContainerId.match( /^customize-control-nav_menu_item-(-?\d+)$/, '' );

@@ -609,8 +609,11 @@
 	border-left: none;
 	border-right: none;
 	background: #fff;
+<<<<<<< HEAD
 	-webkit-transition: background-color 0.15s;
 	transition: background-color 0.15s;
+=======
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 }
 
 #available-menu-items .open .accordion-section-title,
@@ -702,6 +705,10 @@ button.not-a-button {
 #available-menu-items .accordion-section-content {
 	padding: 1px 15px 15px 15px;
 	margin: 0;
+<<<<<<< HEAD
+=======
+	min-height: 120px;
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 	max-height: 290px;
 }
 

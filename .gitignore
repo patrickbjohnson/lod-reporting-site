@@ -1,0 +1,5 @@
+uploads
+.env
+.DS_Store
+wp-config.php
+composer.lock

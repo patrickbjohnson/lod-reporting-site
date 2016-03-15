@@ -121,17 +121,29 @@ function on_all_status_transitions( $new_status, $old_status, $post ) {
     $user_display_name = $user_data->display_name;
 
     $headers = 'From: Test Email <im@pbj.me>' . "\r\n";
+<<<<<<< HEAD
     $subject = "Your Liberal Arts PR Report";
     $message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
     
     if ( $old_status != 'publish'  &&  $new_status == 'publish' ) {
     	$message .= "<p>Your Liberal Arts press report has been published and is available to view and download. Please direct any questions to your respective publicist.</p>";
+=======
+    $subject = "Your Life or Death PR Report";
+    $message = "<h1>Hi " . $user_display_name . "!</h1>\n\n";
+    
+    if ( $old_status != 'publish'  &&  $new_status == 'publish' ) {
+    	$message .= "<p>Your Life or Death press report has been published and is available to view and download. Please direct any questions to your respective publicist.</p>";
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
     	$message .= "<p>View your report <a href='" . $post_url . "'>here</a></p>";
     	wp_mail( $user_email, $subject, $message, $headers );    
     } 
 
     if ($old_status == 'publish' && $new_status == 'publish') {
+<<<<<<< HEAD
     	$message .= "<p>Your Liberal Arts press report has been updated and is available to view and download. Please direct any questions to your respective publicist.</p>";
+=======
+    	$message .= "<p>Your Life or Death press report has been updated and is available to view and download. Please direct any questions to your respective publicist.</p>";
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
     	$message .= "<p>View your report <a href='" . $post_url . "'>here</a></p>";
     	wp_mail( $user_email, $subject, $message, $headers );    
     }
@@ -167,7 +179,13 @@ function remove_admin_menus () {
 	}
 
 }
+<<<<<<< HEAD
 // add_action('admin_menu', 'remove_admin_menus');
 // 
 // add_filter('acf/settings/show_admin', '__return_false');
+=======
+add_action('admin_menu', 'remove_admin_menus');
+
+add_filter('acf/settings/show_admin', '__return_false');
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 

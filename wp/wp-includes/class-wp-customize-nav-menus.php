@@ -930,7 +930,11 @@ final class WP_Customize_Nav_Menus {
 			'renderQueryVar'        => self::RENDER_QUERY_VAR,
 			'renderNonceValue'      => wp_create_nonce( self::RENDER_AJAX_ACTION ),
 			'renderNoncePostKey'    => self::RENDER_NONCE_POST_KEY,
+<<<<<<< HEAD
 			'requestUri'            => empty( $_SERVER['REQUEST_URI'] ) ? home_url( '/' ) : esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
+=======
+			'requestUri'            => '/',
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 			'theme'                 => array(
 				'stylesheet' => $this->manager->get_stylesheet(),
 				'active'     => $this->manager->is_theme_active(),
@@ -939,6 +943,13 @@ final class WP_Customize_Nav_Menus {
 			'navMenuInstanceArgs'   => $this->preview_nav_menu_instance_args,
 		);
 
+<<<<<<< HEAD
+=======
+		if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+			$exports['requestUri'] = esc_url_raw( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ) );
+		}
+
+>>>>>>> 02e481d63e8d20aaa2bbe28cdfbde111873e8416
 		printf( '<script>var _wpCustomizePreviewNavMenusExports = %s;</script>', wp_json_encode( $exports ) );
 	}
 
