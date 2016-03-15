@@ -1,0 +1,15 @@
+{
+	"name": "progresslabs/lod-reporting-site",
+    "version": "2.0",
+	"description": "Liberal Arts PR Reporting Site",
+    "authors": [
+        {
+            "name": "Patrick Johnson",
+            "email": "hi@progresslabs.co"
+        }
+    ],
+    "require": {
+		"vlucas/phpdotenv": "~1.0",
+        "j7mbo/twitter-api-php": "dev-master"
+	}
+}

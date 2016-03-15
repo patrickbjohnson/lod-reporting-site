@@ -1,0 +1,120 @@
+/**
+ * Block: nav
+ * Element: nav__element
+ * Modifier: nav--modifier
+ */
+
+$block: nav;
+.nav {
+	@include transition(padding .300s ease-out);
+	position: relative;
+	width: 100%;
+	float: left;
+	background: rgba(0,0,0,0.5);
+	padding-top: 15px;
+	padding-bottom: 15px;	
+
+	@include respond-to('small and up') {
+		padding-top: 25px;
+		padding-bottom: 25px;
+		text-align: center;
+	}
+
+	&--is-open {
+		.#{$block}__wrapper {
+			display: block;
+			width: 100%;
+			float: left;
+			padding-top: 15px;
+		}
+	}
+	
+	&__wrapper {
+		position: relative;
+		display: none;
+		
+		@include respond-to('small and up') {
+			display: block;
+			float: left;
+			max-width: 1000px;
+			margin-left: 25px;
+		}
+	}
+
+	&__item {
+		@include transition(color .250s ease-out);
+		font-family: $primary-font;
+		color: $color-white;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		@include respond-to('up to small') {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		@include respond-to('small and up') {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		float: right;
+		color: white;
+
+		@include respond-to('small and up') {
+			@include vertically-centered;
+			@include transition(color .250s ease-out);
+			position: absolute;
+		}
+
+		svg {
+			display: block;
+			width: 43px;
+			height: 30px;
+			
+			@include respond-to('small and up') {
+				width: 57px;
+				height: 40px;
+			}
+		}
+	}
+}
+
+.menu {
+	@include appearance(none);
+	float: left;
+	padding: 0;
+	border: 0;
+	margin-left: 20px;
+	background: transparent;
+
+	@include respond-to('small and up') {
+		display: none;
+	}
+
+
+	&__bar {
+		margin-bottom: 4px;
+		width: 25px;
+		height: 3px;
+		display: block;
+		background: $color-white;
+	}
+}
+
+svg {
+	fill: currentColor;
+}
+
+.lod-logo {
+	width: 50px;
+	color: white;
+}
